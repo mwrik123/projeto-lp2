@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import 'Hamburguer'
 
 static int id = 0;
 public class Main {
@@ -9,31 +10,103 @@ public class Main {
             Scanner sc = new Scanner(System.in);
 
             int opc = sc.nextInt();
+            int opc2 = 0;
+            int opc3 = 0;
+            int opc4 = 0;
+            int opc5 = 0;
 
             switch (opc){
                 case 1:
                     id++;
+                    System.out.print("Nome do pedido:\n");
+                    String nome = sc.next();
+                    Pedido a = new Pedido(id, nome);
+                    
                     System.out.print("Adicione produtos ao carrinho:\n");
                     while(true){
                         System.out.print("[1] Hamburguer (simples/ duplo/ triplo)\n[2] Croc (simples/ parmegiana/ americano)\n" +
                                 "[3] X-salada\n[4] X-egg bacon burguer\n[5] Burguer americano\n[6]Box-combo\n" +
                                 "[7] Sorvete (chocolate/ misto/ creme)\n[8] Porções (Batata/ Filé de frango empanado)\n[9] Bebida\n[10] Sair");
-                        int opc2 = sc.nextInt();
+                        opc2 = sc.nextInt();
 
                         switch (opc2){
                             case 1:
                                 System.out.print("[1] Simples\n[2] Duplo\n[3] Triplo\n");
-                                int opc3 = sc.nextInt();
+                                opc3 = sc.nextInt();
                                 switch (opc3){
                                     case 1:
                                         //lista ingredientes e chama função pra remover
-                                        System.out.print("Deseja remover algum ingrediente?");
+                                        System.out.print("[1] Frango\n[2] Carne\n");
+                                        opc4 = sc.nextInt();
+                                        if(opc4 == 1){
+                                            System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+                                            opc5 = sc.nextInt();
+
+                                            if(opc5 == 1){
+                                                System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer\n[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Frango\n[7] Pronto\n");
+                                            } else if(opc5 == 2){
+                                                HamburguerSimples hamburguer = new HamburguerSimples(frango);
+                                                a.produtos.add(hamburguer);
+                                            } else {
+                                                //erro
+                                            }
+                                        } else if(opc4 == 2){
+                                            System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+                                            opc5 = sc.nextInt();
+
+                                            if(opc5 == 1){
+                                                System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer\n[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Carne\n[7] Pronto\n");
+                                            } else if(opc5 == 2){
+                                                HamburguerSimples hamburguer = new HamburguerSimples(carne);
+                                                a.produtos.add(hamburguer);
+                                            } else {
+                                                //erro
+                                            }
+                                        } else {
+                                            //erro
+                                        }
                                     case 2:
                                         //lista ingredientes e chama função pra remover
-                                        System.out.print("Deseja remover algum ingrediente?");
+                                        System.out.print("[1] Frango\n[2] Carne\n");
+                                        opc4 = sc.nextInt();
+
+                                        if(opc4 == 1){
+                                            System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+                                            opc5 = sc.nextInt();
+
+                                            if(opc5 == 1){
+                                                System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n[2] Hamburguer 2\n[3] Pão\n[4] Salada\n[5] Molho\n[6] Ovo\n[7] Frango\n[8] Salsicha\n[9] Pronto\n");
+                                            } else if(opc5 == 2){
+                                                HamburguerDuplo hamburguer = new HamburguerDuplo(frango);
+                                                a.produtos.add(hamburguer);
+                                            } else {
+                                                //erro
+                                            }
+                                        } else if(opc4 == 2){
+                                            System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+                                            opc5 = sc.nextInt();
+
+                                            if(opc5 == 1){
+                                                System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n[2] Hamburguer 2\n[3] Pão\n[4] Salada\n[5] Molho\n[6] Ovo\n[7] Carne\n[8] Salsicha\n[9] Pronto\n");
+                                            } else if(opc5 == 2){
+                                                HamburguerDuplo hamburguer = new HamburguerDuplo(carne);
+                                                a.produtos.add(hamburguer);
+                                            } else {
+                                                //erro
+                                            }
                                     case 3:
-                                        //lista ingredientes e chama função pra remover
-                                        System.out.print("Deseja remover algum ingrediente?");
+                                        System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+                                        opc4 = sc.nextInt();
+
+                                        if(opc4 == 1){
+                                            System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer\n[2] Hamburguer 2\n[3] Hamburguer 3\n[4] Pão\n[5] Salada\n[6] Salada 2\n[7] Molho\n[8] Ovo\n"+
+                                                             "[9] Frango\n[10] Carne\n[11] Salsicha\n[12] Pronto\n");
+                                        } else if(opc4 == 2){
+                                            HamburguerTriplo hamburguer = new HamburguerTriplo();
+                                            a.produtos.add(hamburguer);
+                                        } else {
+                                            //erro
+                                        }
                                     default:
                                         //exception ou implementa while pra perguntar ate digitar o certo
                                 }
@@ -43,7 +116,7 @@ public class Main {
                                 switch (opc3){
                                     case 1:
                                         //lista ingredientes e chama função pra remover
-                                        System.out.print("Deseja remover algum ingrediente?");
+                                        System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
                                     case 2:
                                         //lista ingredientes e chama função pra remover
                                         System.out.print("Deseja remover algum ingrediente?");
@@ -170,4 +243,5 @@ public class Main {
         }
     }
 }
+
 
