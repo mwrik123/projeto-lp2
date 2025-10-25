@@ -19,8 +19,8 @@ public class Hamburguer implements Produtos{
         preco = 15.0;
     }
 
-    void remove(int produto){
-        ingredientes.remove(produto);
+    void remove(Ingredientes ingrediente){
+        ingredientes.remove(ingrediente);
     }
     @Override
     public void imprime() {
