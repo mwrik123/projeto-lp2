@@ -76,68 +76,68 @@ public class Main {
                                     }
                                 }
 
-                                switch (opc3){
+                                switch (opc3) {
                                     case 1:
                                         //lista ingredientes e chama função pra remover
                                         System.out.print("[1] Frango\n[2] Carne\n");
 
-                                        while(true){
-                                            try{
+                                        while (true) {
+                                            try {
                                                 opc4 = sc.nextInt();
 
-                                                if(opc4 < 1 || opc4 > 2){
+                                                if (opc4 < 1 || opc4 > 2) {
                                                     System.out.print("Opção inválida\n");
                                                     continue;
                                                 }
                                                 break;
-                                            } catch (InputMismatchException e){
+                                            } catch (InputMismatchException e) {
                                                 System.out.print("Inserção inválida\n");
                                             }
                                         }
 
-                                        if(opc4 == 1){
+                                        if (opc4 == 1) {
                                             Hamburguer hamburguer = new Hamburguer(opc4);
 
                                             System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Concluir\n");
 
-                                            while(true){
-                                                try{
+                                            while (true) {
+                                                try {
                                                     opc5 = sc.nextInt();
 
-                                                    if(opc5 < 1 || opc5 > 2){
+                                                    if (opc5 < 1 || opc5 > 2) {
                                                         System.out.print("Opção inválida\n");
                                                         continue;
                                                     }
                                                     break;
-                                                } catch (InputMismatchException e){
+                                                } catch (InputMismatchException e) {
                                                     System.out.print("Inserção inválida\n");
                                                 }
                                             }
 
-                                            if(opc5 == 1){
-                                                while(true){
-                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer\n[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Frango\n[7] Pronto\n");
+                                            if (opc5 == 1) {
+                                                while (true) {
+                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer\n[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Frango\n[8] Pronto\n");
 
-                                                    while(true){
-                                                        try{
+                                                    while (true) {
+                                                        try {
                                                             opc6 = sc.nextInt();
 
-                                                            if(opc6 < 1 || opc6 > 7){
+                                                            if (opc6 < 1 || opc6 > 8) {
                                                                 System.out.print("Opção inválida\n");
                                                                 continue;
                                                             }
                                                             break;
-                                                        } catch (InputMismatchException e){
+                                                        } catch (InputMismatchException e) {
                                                             System.out.print("Inserção inválida\n");
                                                         }
                                                     }
 
-                                                    if(opc6 == 7){
+                                                    if (opc6 == 8) {
                                                         break;
-                                                    } else if(opc6 == 6){
-                                                        hamburguer.remove(Ingredientes.values()[opc6+1]);
-                                                    }else {
+                                                    } else if (opc6 == 7) {
                                                         hamburguer.remove(Ingredientes.values()[opc6]);
+                                                    } else {
+                                                        hamburguer.remove(Ingredientes.values()[opc6 - 1]);
                                                     }
                                                 }
                                             }
@@ -145,110 +145,191 @@ public class Main {
                                             produtosPedidoAtual.add(hamburguer);
                                         }
 
-                                        if(opc4 == 2){
+                                        if (opc4 == 2) {
                                             Hamburguer hamburguer = new Hamburguer(opc4);
 
                                             System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Concluir\n");
 
-                                            while(true){
-                                                try{
+                                            while (true) {
+                                                try {
                                                     opc5 = sc.nextInt();
 
-                                                    if(opc5 < 1 || opc5 > 2){
+                                                    if (opc5 < 1 || opc5 > 2) {
                                                         System.out.print("Opção inválida\n");
                                                         continue;
                                                     }
                                                     break;
-                                                } catch (InputMismatchException e){
+                                                } catch (InputMismatchException e) {
                                                     System.out.print("Inserção inválida\n");
                                                 }
                                             }
 
-                                            if(opc5 == 1){
-                                                while(true){
-                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer\n[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Carne\n[7] Pronto\n");
+                                            if (opc5 == 1) {
+                                                while (true) {
+                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer\n[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n [7] Carne\n[8] Pronto\n");
 
-                                                    while(true){
-                                                        try{
+                                                    while (true) {
+                                                        try {
                                                             opc6 = sc.nextInt();
 
-                                                            if(opc6 < 1 || opc6 > 7){
+                                                            if (opc6 < 1 || opc6 > 8) {
                                                                 System.out.print("Opção inválida\n");
                                                                 continue;
                                                             }
                                                             break;
-                                                        } catch (InputMismatchException e){
+                                                        } catch (InputMismatchException e) {
                                                             System.out.print("Inserção inválida\n");
                                                         }
                                                     }
 
-                                                    if(opc6 == 7){
+                                                    if (opc6 == 8) {
                                                         break;
                                                     } else {
-                                                        hamburguer.remove(Ingredientes.values()[opc6]);
+                                                        hamburguer.remove(Ingredientes.values()[opc6 - 1]);
                                                     }
                                                 }
                                             }
 
                                             produtosPedidoAtual.add(hamburguer);
                                         }
-                                        
+
                                     case 2:
                                         //lista ingredientes e chama função pra remover
                                         System.out.print("[1] Frango\n[2] Carne\n");
-                                        opc4 = sc.nextInt();
 
-                                        if(opc4 == 1){
-                                            System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
-                                            opc5 = sc.nextInt();
-
-                                            if(opc5 == 1){
-                                                System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n[2] Hamburguer 2\n[3] Pão\n[4] Salada\n[5] Molho\n[6] Ovo\n[7] Frango\n[8] Salsicha\n[9] Pronto\n");
-                                            } else if(opc5 == 2){
-                                                HamburguerDuplo hamburguer = new HamburguerDuplo(frango);
-                                                a.produtos.add(hamburguer);
-                                            } else {
-                                                //erro
-                                            }
-                                        } else if(opc4 == 2){
-                                            System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
-                                            opc5 = sc.nextInt();
-
-                                            if(opc5 == 1){
-                                                System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n[2] Hamburguer 2\n[3] Pão\n[4] Salada\n[5] Molho\n[6] Ovo\n[7] Carne\n[8] Salsicha\n[9] Pronto\n");
-                                            } else if(opc5 == 2){
-                                                HamburguerDuplo hamburguer = new HamburguerDuplo(carne);
-                                                a.produtos.add(hamburguer);
-                                            } else {
-                                                //erro
-                                            }
-                                            case 3:
-                                                System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+                                        while (true) {
+                                            try {
                                                 opc4 = sc.nextInt();
 
-                                                if(opc4 == 1){
-                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer\n[2] Hamburguer 2\n[3] Hamburguer 3\n[4] Pão\n[5] Salada\n[6] Salada 2\n[7] Molho\n[8] Ovo\n"+
-                                                            "[9] Frango\n[10] Carne\n[11] Salsicha\n[12] Pronto\n");
-                                                } else if(opc4 == 2){
-                                                    HamburguerTriplo hamburguer = new HamburguerTriplo();
-                                                    a.produtos.add(hamburguer);
-                                                } else {
-                                                    //erro
+                                                if (opc4 < 1 || opc4 > 2) {
+                                                    System.out.print("Opção inválida\n");
+                                                    continue;
                                                 }
-                                            default:
-                                                //exception ou implementa while pra perguntar ate digitar o certo
+                                                break;
+                                            } catch (InputMismatchException e) {
+                                                System.out.print("Inserção inválida\n");
+                                            }
                                         }
+
+                                        if (opc4 == 1) {
+                                            HamburguerDuplo hamburguerDuplo = new HamburguerDuplo(opc4);
+
+                                            System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+
+                                            while (true) {
+                                                try {
+                                                    opc5 = sc.nextInt();
+
+                                                    if (opc5 < 1 || opc5 > 2) {
+                                                        System.out.print("Opção inválida\n");
+                                                        continue;
+                                                    }
+                                                    break;
+                                                } catch (InputMismatchException e) {
+                                                    System.out.print("Inserção inválida\n");
+                                                }
+                                            }
+
+                                            if (opc5 == 1) {
+
+
+                                                while (true) {
+                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
+                                                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Frango\n[8] Hamburguer 2\n[9] Salsicha\n[10] Pronto\n");
+
+                                                    while (true) {
+                                                        try {
+                                                            opc6 = sc.nextInt();
+
+                                                            if (opc6 < 1 || opc6 > 10) {
+                                                                System.out.print("Opção inválida\n");
+                                                                continue;
+                                                            }
+                                                            break;
+                                                        } catch (InputMismatchException e) {
+                                                            System.out.print("Inserção inválida\n");
+                                                        }
+                                                    }
+
+                                                    if (opc6 == 10) {
+                                                        break;
+                                                    } else if (opc6 == 7 || opc6 == 8 || opc6 == 9) {
+                                                        hamburguerDuplo.remove(Ingredientes.values()[opc6]);
+                                                    } else {
+                                                        hamburguerDuplo.remove(Ingredientes.values()[opc6 - 1]);
+                                                    }
+                                                }
+
+                                            }
+                                            produtosPedidoAtual.add(hamburguerDuplo);
+                                        }
+
+                                        if (opc4 == 2) {
+                                            HamburguerDuplo hamburguerDuplo = new HamburguerDuplo(opc4);
+
+                                            System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+
+                                            while (true) {
+                                                try {
+                                                    opc5 = sc.nextInt();
+
+                                                    if (opc5 < 1 || opc5 > 2) {
+                                                        System.out.print("Opção inválida\n");
+                                                        continue;
+                                                    }
+                                                    break;
+                                                } catch (InputMismatchException e) {
+                                                    System.out.print("Inserção inválida\n");
+                                                }
+                                            }
+
+                                            if (opc5 == 1) {
+
+
+                                                while (true) {
+                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
+                                                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Carne\n[8] Hamburguer 2\n[9] Salsicha\n[10] Pronto\n");
+
+                                                    while (true) {
+                                                        try {
+                                                            opc6 = sc.nextInt();
+
+                                                            if (opc6 < 1 || opc6 > 10) {
+                                                                System.out.print("Opção inválida\n");
+                                                                continue;
+                                                            }
+                                                            break;
+                                                        } catch (InputMismatchException e) {
+                                                            System.out.print("Inserção inválida\n");
+                                                        }
+                                                    }
+
+                                                    if (opc6 == 10) {
+                                                        break;
+                                                    } else if (opc6 == 8 || opc6 == 9) {
+                                                        hamburguerDuplo.remove(Ingredientes.values()[opc6]);
+                                                    } else {
+                                                        hamburguerDuplo.remove(Ingredientes.values()[opc6 - 1]);
+                                                    }
+                                                }
+
+                                            }
+                                            produtosPedidoAtual.add(hamburguerDuplo);
+                                        }
+                                    case 3:
+
+                                }
+                            case 2:
+                                System.out.print("[1] Simples\n[2] Parmegiana\n[3] Americano\n");
+                                opc3 = sc.nextInt();
+                                switch (opc3){
+                                    case 1:
+                                        //lista ingredientes e chama função pra remover
+                                        System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
                                     case 2:
-                                        System.out.print("[1] Simples\n[2] Parmegiana\n[3] Americano\n");
-                                        opc3 = sc.nextInt();
-                                        switch (opc3){
-                                            case 1:
-                                                //lista ingredientes e chama função pra remover
-                                                System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
-                                            case 2:
-                                                //lista ingredientes e chama função pra remover
-                                                System.out.print("Deseja remover algum ingrediente?");
-                                            case 3:
+                                            //lista ingredientes e chama função pra remover
+                                            System.out.print("Deseja remover algum ingrediente?");
+                                    case 3:
                                                 //lista ingredientes e chama função pra remover
                                                 System.out.print("Deseja remover algum ingrediente?");
                                             default:

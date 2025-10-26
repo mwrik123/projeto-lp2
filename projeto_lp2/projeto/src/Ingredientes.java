@@ -4,6 +4,11 @@ public enum Ingredientes{
     SALADA,
     MOLHO,
     OVO,
+    QUEIJO,
     CARNE,
-    FRANGO
+    FRANGO,
+    SALSICHA,
+    HAMB2,
+    HAMB3,
+    SALADA2
 }

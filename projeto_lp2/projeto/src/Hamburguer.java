@@ -3,11 +3,11 @@ import java.util.ArrayList;
 public class Hamburguer implements Produtos{
 
     ArrayList <Ingredientes> ingredientes;
-    private final double preco;
+    protected static double preco;
 
     Hamburguer(int opc){
         ingredientes = new ArrayList<>();
-        for(int i = 0; i < 5; i++){
+        for(int i = 0; i < 6; i++){
             ingredientes.add(Ingredientes.values()[i]);
         }
         if(opc == 1){
@@ -28,5 +28,9 @@ public class Hamburguer implements Produtos{
             System.out.print(ingredientes1+"\n");
         }
         System.out.print("Preço: "+preco+"\n");
+    }
+
+    void novoPreco (){
+        Hamburguer.preco = 20.0;
     }
 }
