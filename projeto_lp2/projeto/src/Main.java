@@ -235,7 +235,7 @@ public class Main {
 
                                                 while (true) {
                                                     System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
-                                                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Frango\n[8] Hamburguer 2\n[9] Salsicha\n[10] Pronto\n");
+                                                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Frango\n[8] Salsicha\n[9] Hamburguer 2\n[10] Pronto\n");
 
                                                     while (true) {
                                                         try {
@@ -288,7 +288,7 @@ public class Main {
 
                                                 while (true) {
                                                     System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
-                                                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Carne\n[8] Hamburguer 2\n[9] Salsicha\n[10] Pronto\n");
+                                                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Carne\n[8] Salsicha\n[9] Hamburguer 2\n[10] Pronto\n");
 
                                                     while (true) {
                                                         try {
@@ -316,127 +316,420 @@ public class Main {
                                             }
                                             produtosPedidoAtual.add(hamburguerDuplo);
                                         }
-                                    case 3:
+                                    case 3: //Triplo
+                                        System.out.print("[1] Frango\n[2] Carne\n");
+
+                                        while (true) {
+                                            try {
+                                                opc4 = sc.nextInt();
+
+                                                if (opc4 < 1 || opc4 > 2) {
+                                                    System.out.print("Opção inválida\n");
+                                                    continue;
+                                                }
+                                                break;
+                                            } catch (InputMismatchException e) {
+                                                System.out.print("Inserção inválida\n");
+                                            }
+                                        }
+
+                                        if (opc4 == 1) {
+                                            HamburguerDuplo hamburguerTriplo = new HamburguerTriplo(opc4);
+
+                                            System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+
+                                            while (true) {
+                                                try {
+                                                    opc5 = sc.nextInt();
+
+                                                    if (opc5 < 1 || opc5 > 2) {
+                                                        System.out.print("Opção inválida\n");
+                                                        continue;
+                                                    }
+                                                    break;
+                                                } catch (InputMismatchException e) {
+                                                    System.out.print("Inserção inválida\n");
+                                                }
+                                            }
+
+                                            if (opc5 == 1) {
+
+
+                                                while (true) {
+                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
+                                                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Frango\n[8] Salsicha\n[9] Hamburguer 2\n [10] Hamburguer 3\n[11] Salada 2\n [12] Pronto\n");
+
+                                                    while (true) {
+                                                        try {
+                                                            opc6 = sc.nextInt();
+
+                                                            if (opc6 < 1 || opc6 > 12) {
+                                                                System.out.print("Opção inválida\n");
+                                                                continue;
+                                                            }
+                                                            break;
+                                                        } catch (InputMismatchException e) {
+                                                            System.out.print("Inserção inválida\n");
+                                                        }
+                                                    }
+
+                                                    if (opc6 == 12) {
+                                                        break;
+                                                    } else if (opc6 == 7 || opc6 == 8 || opc6 == 9 || opc6 == 10 || opc6 == 11) {
+                                                        hamburguerTriplo.remove(Ingredientes.values()[opc6]);
+                                                    } else {
+                                                        hamburguerTriplo.remove(Ingredientes.values()[opc6 - 1]);
+                                                    }
+                                                }
+
+                                            }
+                                            produtosPedidoAtual.add(hamburguerTriplo);
+                                        }
+
+                                        if (opc4 == 2) {
+                                            HamburguerDuplo hamburguerDuplo = new HamburguerDuplo(opc4);
+
+                                            System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+
+                                            while (true) {
+                                                try {
+                                                    opc5 = sc.nextInt();
+
+                                                    if (opc5 < 1 || opc5 > 2) {
+                                                        System.out.print("Opção inválida\n");
+                                                        continue;
+                                                    }
+                                                    break;
+                                                } catch (InputMismatchException e) {
+                                                    System.out.print("Inserção inválida\n");
+                                                }
+                                            }
+
+                                            if (opc5 == 1) {
+
+
+                                                while (true) {
+                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
+                                                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Carne\n[8] Salsicha\n[9] Hamburguer 2\n [10] Hamburguer 3\n[11] Salada 2\n [12] Pronto\n");
+
+                                                    while (true) {
+                                                        try {
+                                                            opc6 = sc.nextInt();
+
+                                                            if (opc6 < 1 || opc6 > 12) {
+                                                                System.out.print("Opção inválida\n");
+                                                                continue;
+                                                            }
+                                                            break;
+                                                        } catch (InputMismatchException e) {
+                                                            System.out.print("Inserção inválida\n");
+                                                        }
+                                                    }
+
+                                                    if (opc6 == 12) {
+                                                        break;
+                                                    } else if (opc6 == 8 || opc6 == 9 || opc6 == 10 || opc6 == 11) {
+                                                        hamburguerTriplo.remove(Ingredientes.values()[opc6]);
+                                                    } else {
+                                                        hamburguerTriplo.remove(Ingredientes.values()[opc6 - 1]);
+                                                    }
+                                                }
+
+                                            }
+                                            produtosPedidoAtual.add(hamburguerTriplo);
+                                        }
 
                                 }
                             case 2:
+                                //Croc
                                 System.out.print("[1] Simples\n[2] Parmegiana\n[3] Americano\n");
-                                opc3 = sc.nextInt();
+
+                                while(true){
+                                    try{
+                                        opc3 = sc.nextInt();
+
+                                        if(opc3 < 1 || opc3 > 3){
+                                            System.out.print("Opção inválida\n");
+                                            continue;
+                                        }
+                                        break;
+                                    } catch (InputMismatchException e){
+                                        System.out.print("Inserção inválida\n");
+                                    }
+                                }
+
                                 switch (opc3){
                                     case 1:
+                                        CrocSimples croc = new CrocSimples();
+
                                         //lista ingredientes e chama função pra remover
                                         System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+
+                                        while (true) {
+                                                try {
+                                                    opc4 = sc.nextInt();
+
+                                                    if (opc4 < 1 || opc4 > 2) {
+                                                        System.out.print("Opção inválida\n");
+                                                        continue;
+                                                    }
+                                                    break;
+                                                } catch (InputMismatchException e) {
+                                                    System.out.print("Inserção inválida\n");
+                                                }
+                                            }
+
+                                        if (opc4 == 1) {
+
+
+                                                while (true) {
+                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Frango Empanado\n" +
+                                                            "[2] Alface\n[3] Maionese\n[4] Pronto\n");
+
+                                                    while (true) {
+                                                        try {
+                                                            opc5 = sc.nextInt();
+
+                                                            if (opc5 < 1 || opc5 > 4) {
+                                                                System.out.print("Opção inválida\n");
+                                                                continue;
+                                                            }
+                                                            break;
+                                                        } catch (InputMismatchException e) {
+                                                            System.out.print("Inserção inválida\n");
+                                                        }
+                                                    }
+
+                                                    if (opc5 == 4) {
+                                                        break;
+                                                    } else {
+                                                        croc.remove(IngredientesCroc.values()[opc6 - 1]);
+                                                    }
+                                                }
+
+                                            }
+                                            produtosPedidoAtual.add(croc);
                                     case 2:
+                                        CrocParmegiana parmegiana = new CrocParmegiana();
+
                                             //lista ingredientes e chama função pra remover
-                                            System.out.print("Deseja remover algum ingrediente?");
+                                            System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+
+                                            while (true) {
+                                                try {
+                                                    opc4 = sc.nextInt();
+
+                                                    if (opc4 < 1 || opc4 > 2) {
+                                                        System.out.print("Opção inválida\n");
+                                                        continue;
+                                                    }
+                                                    break;
+                                                } catch (InputMismatchException e) {
+                                                    System.out.print("Inserção inválida\n");
+                                                }
+                                            }
+
+                                        if (opc4 == 1) {
+
+
+                                                while (true) {
+                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Frango Empanado\n" +
+                                                            "[2] Molho de Tomate\n[3] Queijo\n[4] Tomate\n[5] Maionese\n[6] Pronto");
+
+                                                    while (true) {
+                                                        try {
+                                                            opc5 = sc.nextInt();
+
+                                                            if (opc5 < 1 || opc5 > 6) {
+                                                                System.out.print("Opção inválida\n");
+                                                                continue;
+                                                            }
+                                                            break;
+                                                        } catch (InputMismatchException e) {
+                                                            System.out.print("Inserção inválida\n");
+                                                        }
+                                                    }
+
+                                                    if (opc5 == 6) {
+                                                        break;
+                                                    } else {
+                                                        parmegiana.remove(IngredientesParmegiana.values()[opc6 - 1]);
+                                                    }
+                                                }
+
+                                            }
+                                            produtosPedidoAtual.add(parmegiana);
                                     case 3:
+                                        CrocAmericano americano = new CrocAmericano();
+
                                                 //lista ingredientes e chama função pra remover
-                                                System.out.print("Deseja remover algum ingrediente?");
+                                                System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+
+                                                while (true) {
+                                                try {
+                                                    opc4 = sc.nextInt();
+
+                                                    if (opc4 < 1 || opc4 > 2) {
+                                                        System.out.print("Opção inválida\n");
+                                                        continue;
+                                                    }
+                                                    break;
+                                                } catch (InputMismatchException e) {
+                                                    System.out.print("Inserção inválida\n");
+                                                }
+                                            }
+
+                                        if (opc4 == 1) {
+
+
+                                                while (true) {
+                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Frango Empanado\n" +
+                                                            "[2] ...");
+
+                                                    while (true) {
+                                                        try {
+                                                            opc5 = sc.nextInt();
+
+                                                            if (opc5 < 1 || opc5 > 6) {
+                                                                System.out.print("Opção inválida\n");
+                                                                continue;
+                                                            }
+                                                            break;
+                                                        } catch (InputMismatchException e) {
+                                                            System.out.print("Inserção inválida\n");
+                                                        }
+                                                    }
+
+                                                    if (opc5 == 6) {
+                                                        break;
+                                                    } else {
+                                                        americano.remove(IngredientesAmericano.values()[opc6 - 1]);
+                                                    }
+                                                }
+
+                                            }
+                                            produtosPedidoAtual.add(americano);
                                             default:
                                                 //exception ou implementa while
                                         }
+                            case 3:
+                                //X-Salada
+
+                                //lista ingredientes e chama função pra remover
+                                System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+                            case 4:
+                                //X-egg bacon burguer
+
+                                //lista ingredientes e chama função pra remover
+                                System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+                            case 5:
+                                //Burguer Americano
+
+
+                                //lista ingredientes e chama função pra remover
+                                System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+                            case 6:
+                                //Box Combo
+
+                                //implementa montagem do combo a partir do que da pra colocar
+                            case 7:
+                                //Sorvete
+                                System.out.print("[1] Chocolate\n[2] Misto\n[3] Creme\n");
+                                opc3 = sc.nextInt();
+
+                                switch (opc3){
+                                    case 1:
+                                        //sorvete de chocolate
+                                    case 2:
+                                        //sorvete misto
                                     case 3:
-                                        //lista ingredientes e chama função pra remover
-                                        System.out.print("Deseja remover algum ingrediente?");
-                                    case 4:
-                                        //lista ingredientes e chama função pra remover
-                                        System.out.print("Deseja remover algum ingrediente?");
-                                    case 5:
-                                        //lista ingredientes e chama função pra remover
-                                        System.out.print("Deseja remover algum ingrediente?");
-                                    case 6:
-                                        //implementa montagem do combo a partir do que da pra colocar
-                                    case 7:
-                                        System.out.print("[1] Chocolate\n[2] Misto\n[3] Creme\n");
-                                        opc3 = sc.nextInt();
+                                        //sorvete de creme
+                                    default:
+                                        //exceptio ou while
+                                }
+                            case 8:
+                                //Batata frita
+                                System.out.print("[1] Batata frita\n[2] Filés de frango empanado\n");
+                                opc3 = sc.nextInt();
 
-                                        switch (opc3){
-                                            case 1:
-                                                //sorvete de chocolate
-                                            case 2:
-                                                //sorvete misto
-                                            case 3:
-                                                //sorvete de creme
-                                            default:
-                                                //exceptio ou while
-                                        }
-                                    case 8:
-                                        System.out.print("[1] Batata frita\n[2] Filés de frango empanado\n");
-                                        opc3 = sc.nextInt();
-
-                                        switch (opc3){
-                                            case 1:
-                                                //batata
-                                            case 2:
-                                                //filé
-                                            default:
-                                                //exception ou while
-                                        }
-                                    case 9:
-                                        System.out.print("[1] Refrigerante (refil/lata)\n[2] Sucos (laranja/ Dell vale)\n[3] Chá gelado\n[4] Água saborizada\n[5] Água\n");
-                                        opc3 = sc.nextInt();
-
-                                        switch (opc3){
-                                            case 1:
-                                                System.out.print("[1] Refil\n[2] Lata\n");
-                                                int opc4 = sc.nextInt();
-
-                                                switch (opc4){
-                                                    case 1:
-                                                        //refil
-                                                    case 2:
-                                                        System.out.print("[1] Guaraná\n[2] Coca cola\n[3] Fanta uva\n");
-                                                        int opc5 = sc.nextInt();
-
-                                                        switch (opc5){
-                                                            case 1:
-                                                                //lata de guarana
-                                                            case 2:
-                                                                //lata de coca
-                                                            case 3:
-                                                                //lata de fanta
-                                                            default:
-                                                                //exception ou while
-                                                        }
-                                                    default:
-                                                        //exception ou while
-                                                }
-                                            case 2:
-                                                System.out.print("[1] Suco de laranja natural\n[2] Dell vale (uva/ laranja)\n");
-                                                opc4 = sc.nextInt();
-
-                                                switch (opc4){
-                                                    case 1:
-                                                        //suco de laranja
-                                                    case 2:
-                                                        System.out.print("[1] Uva\n[2] Laranja\n");
-                                                        int opc5 = sc.nextInt();
-
-                                                        switch (opc5){
-                                                            case 1:
-                                                                //dell uva
-                                                            case 2:
-                                                                //dell laranja
-                                                            default:
-                                                                //exception ou while
-                                                        }
-                                                    default:
-                                                        //exception ou while
-                                                }
-                                            case 3:
-                                                //cha gelado
-                                            case 4:
-                                                //agua saborizada
-                                            case 5:
-                                                //agua
-                                            default:
-                                                //exception ou while
-                                        }
-                                    case 10:
-                                        //add arrays de produtos ao pedido e fecha o carrinho
+                                switch (opc3){
+                                    case 1:
+                                        //batata
+                                    case 2:
+                                        //filé
                                     default:
                                         //exception ou while
                                 }
+                            case 9:
+                                //Bebidas
+
+                                System.out.print("[1] Refrigerante (refil/lata)\n[2] Sucos (laranja/ Dell vale)\n[3] Chá gelado\n[4] Água saborizada\n[5] Água\n");
+                                opc3 = sc.nextInt();
+
+                                switch (opc3){
+                                    case 1:
+                                        System.out.print("[1] Refil\n[2] Lata\n");
+                                        int opc4 = sc.nextInt();
+
+                                        switch (opc4){
+                                            case 1:
+                                                //refil
+                                            case 2:
+                                                System.out.print("[1] Guaraná\n[2] Coca cola\n[3] Fanta uva\n");
+                                                int opc5 = sc.nextInt();
+
+                                                switch (opc5){
+                                                    case 1:
+                                                        //lata de guarana
+                                                    case 2:
+                                                        //lata de coca
+                                                    case 3:
+                                                        //lata de fanta
+                                                    default:
+                                                        //exception ou while
+                                                }
+                                            default:
+                                                //exception ou while
+                                        }
+                                    case 2:
+                                        System.out.print("[1] Suco de laranja natural\n[2] Dell vale (uva/ laranja)\n");
+                                        opc4 = sc.nextInt();
+
+                                        switch (opc4){
+                                            case 1:
+                                                //suco de laranja
+                                            case 2:
+                                                System.out.print("[1] Uva\n[2] Laranja\n");
+                                                int opc5 = sc.nextInt();
+
+                                                switch (opc5){
+                                                    case 1:
+                                                        //dell uva
+                                                    case 2:
+                                                        //dell laranja
+                                                    default:
+                                                        //exception ou while
+                                                }
+                                            default:
+                                                //exception ou while
+                                        }
+                                    case 3:
+                                        //cha gelado
+                                    case 4:
+                                        //agua saborizada
+                                    case 5:
+                                        //agua
+                                    default:
+                                        //exception ou while
+                                }
+                            case 10:
+                                //Sair
+
+
+                                //add arrays de produtos ao pedido e fecha o carrinho
+                            default:
+                                //exception ou while
+                        }
                         }
                         case 2:
                             //remove pedido da lista de pedidos pendentes e add saldo ao caixa
@@ -452,6 +745,3 @@ public class Main {
             }
         }
     }
-
-
-
