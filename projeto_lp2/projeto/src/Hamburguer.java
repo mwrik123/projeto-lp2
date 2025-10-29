@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Hamburguer implements Produtos{
 
-    ArrayList <Ingredientes> ingredientes;
+    protected ArrayList <Ingredientes> ingredientes;
     protected static double preco;
 
     Hamburguer(int opc){
@@ -18,6 +18,12 @@ public class Hamburguer implements Produtos{
         }
         preco = 15.0;
     }
+    Hamburguer(){
+        ingredientes = new ArrayList<>();
+        for(int i = 0; i < Ingredientes.values().length; i++){
+            ingredientes.add(Ingredientes.values()[i]);
+        }
+    }
 
     void remove(Ingredientes ingrediente){
         ingredientes.remove(ingrediente);
@@ -30,7 +36,12 @@ public class Hamburguer implements Produtos{
         System.out.print("Preço: "+preco+"\n");
     }
 
-    void novoPreco (){
-        Hamburguer.preco = 20.0;
+    void novoPreco (int i){
+        if(i == 2){
+            Hamburguer.preco = 20.0;
+        }
+        if(i == 3){
+            Hamburguer.preco = 25.0;
+        }
     }
 }

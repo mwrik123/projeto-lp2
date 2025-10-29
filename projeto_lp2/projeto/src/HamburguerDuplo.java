@@ -5,7 +5,7 @@ public class HamburguerDuplo extends Hamburguer implements Produtos{
         for(int i = 8; i < 10; i++){
             ingredientes.add(Ingredientes.values()[i]);
         }
-        novoPreco();
+        novoPreco(2);
     }
 
 }
