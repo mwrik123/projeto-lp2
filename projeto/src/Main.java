@@ -540,8 +540,59 @@ public class Main {
                                         }
                                         produtosPedidoAtual.add(americano);
                                 }
-                            case 3:
-                                //X-Salada
+                            case 3: //X-Salada
+                                xSalada Xsalada = new xSalada();
+
+                                System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+
+                                while (true) {
+                                    try {
+                                        opc4 = sc.nextInt();
+
+                                        if (opc4 < 1 || opc4 > 2) {
+                                            System.out.print("Opção inválida\n");
+                                            continue;
+                                        }
+                                        break;
+                                    } catch (InputMismatchException e) {
+                                        System.out.print("Inserção inválida\n");
+                                        sc.next();
+                                    }
+                                }
+
+                                if (opc4 == 1) {
+
+                                    while (true) {
+
+                                        System.out.print("Qual ingrediente deseja remover?\n");
+                                        System.out.print("[1] Pão\n[2] Hamburguer\n[3] Queijo Mussarela\n[4] Tomate\n[5] Maionese\n[6] Alface\n [7] Pronto\n");
+
+                                        while (true) {
+                                            try {
+                                                opc5 = sc.nextInt();
+
+                                                if (opc5 < 1 || opc5 > 7) {
+                                                    System.out.print("Opção inválida\n");
+                                                    continue;
+                                                }
+                                                break;
+                                            } catch (InputMismatchException e) {
+                                                System.out.print("Inserção inválida\n");
+                                                sc.next();
+                                            }
+                                        }
+
+                                        if (opc5 == 7) {
+                                            break;
+                                        } else {
+                                            Xsalada.remove(IngredientesXSalada.values()[opc5 - 1]);
+                                            System.out.print("Ingrediente removido.\n");
+                                        }
+                                    }
+                                }
+
+                                produtosPedidoAtual.add(Xsalada);
+                                System.out.print("X-Salada adicionado ao pedido.\n");
 
                                 //lista ingredientes e chama função pra remover
                                 System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
@@ -585,21 +636,18 @@ public class Main {
                                         Sorvete sorveteChoc = new Sorvete("Chocolate");
                                         produtosPedidoAtual.add(sorveteChoc);
                                         System.out.print("Sorvete de Chocolate adicionado.\n");
-                                        break;
                                     case 2:
                                         //sorvete misto
                                         Sorvete sorveteMisto = new Sorvete("Misto");
                                         produtosPedidoAtual.add(sorveteMisto);
                                         System.out.print("Sorvete Misto adicionado.\n");
-                                        break;
                                     case 3:
                                         //sorvete de creme
                                         Sorvete sorveteCreme = new Sorvete("Creme");
                                         produtosPedidoAtual.add(sorveteCreme);
                                         System.out.print("Sorvete de Creme adicionado.\n");
-                                        break;
                                 }
-                                        break;
+                                break;
 
                             case 8:
                                 //batata frita
@@ -625,13 +673,11 @@ public class Main {
                                         BatataFrita batata = new BatataFrita();
                                         produtosPedidoAtual.add(batata);
                                         System.out.print("Batata Frita adicionada.\n");
-                                        break;
                                     case 2:
                                         //filé
                                         FileFrangoEmpanado file = new FileFrangoEmpanado();
                                         produtosPedidoAtual.add(file);
                                         System.out.print("Filé de Frango Empanado adicionado.\n");
-                                        break;
                                 }
                                 break;
 
@@ -677,7 +723,6 @@ public class Main {
                                                 BebidaRefrigeranteRefil refil = new BebidaRefrigeranteRefil();
                                                 produtosPedidoAtual.add(refil);
                                                 System.out.print("Refrigerante Refil adicionado.\n");
-                                                break;
                                             case 2: //refri lata
                                                 System.out.print("[1] Guaraná\n[2] Coca Cola\n[3] Fanta Uva\n");
 
@@ -701,19 +746,16 @@ public class Main {
                                                         BebidaRefrigeranteLata guarana = new BebidaRefrigeranteLata("Guaraná");
                                                         produtosPedidoAtual.add(guarana);
                                                         System.out.print("Lata de Guaraná adicionada.\n");
-                                                        break;
                                                     case 2:
                                                         //lata de coca
                                                         BebidaRefrigeranteLata coca = new BebidaRefrigeranteLata("Coca-Cola");
                                                         produtosPedidoAtual.add(coca);
                                                         System.out.print("Lata de Coca-Cola adicionada.\n");
-                                                        break;
                                                     case 3:
                                                         //lata de fanta
                                                         BebidaRefrigeranteLata fanta = new BebidaRefrigeranteLata("Fanta Uva");
                                                         produtosPedidoAtual.add(fanta);
                                                         System.out.print("Lata de Fanta Uva adicionada.\n");
-                                                        break;
                                                 }
                                                 break;
                                         }
@@ -742,7 +784,6 @@ public class Main {
                                                 Suco sucoLaranja = new Suco("Laranja Natural");
                                                 produtosPedidoAtual.add(sucoLaranja);
                                                 System.out.print("Suco de Laranja Natural adicionado.\n");
-                                                break;
                                             case 2: //dell vale
                                                 System.out.print("[1] Uva\n[2] Laranja\n");
 
@@ -766,13 +807,11 @@ public class Main {
                                                         Suco dellUva = new Suco("Dell Vale Uva");
                                                         produtosPedidoAtual.add(dellUva);
                                                         System.out.print("Suco Dell Vale Uva adicionado.\n");
-                                                        break;
                                                     case 2:
                                                         //dell laranja
                                                         Suco dellLaranja = new Suco("Dell Vale Laranja");
                                                         produtosPedidoAtual.add(dellLaranja);
                                                         System.out.print("Suco Dell Vale Laranja adicionado.\n");
-                                                        break;
                                                 }
                                                 break;
                                         }
@@ -814,10 +853,9 @@ public class Main {
                     //exibe saldo do caixa
                 case 5:
                     //fecha caixa
-                        default:
-                            //exception ou while
+                default:
+                    //exception ou while
             }
         }
     }
 }
-
