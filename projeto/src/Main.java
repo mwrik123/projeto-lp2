@@ -602,7 +602,175 @@ public class Main {
                             case 5:
                                 //Burguer Americano
 
+                                System.out.print("Qual Burguer você deseja? [1] Simples\n[2] Duplo\n[3] Triplo\n");
 
+                                while(true){
+                                    try{
+                                        opc3 = sc.nextInt();
+
+                                        if(opc3 < 1 || opc3 > 3){
+                                            System.out.print("Opção inválida\n");
+                                            continue;
+                                        }
+                                        break;
+                                    } catch (InputMismatchException e){
+                                        System.out.print("Inserção inválida\n");
+                                        sc.next();
+                                    }
+                                }
+
+                                switch (opc3) {
+                                    case 1: //burguer americano simples
+                                        BurguerAmericano americanoSimples = new BurguerAmericano();
+
+                                        System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+
+                                        while (true) {
+                                            try {
+                                                opc4 = sc.nextInt();
+                                                if (opc4 < 1 || opc4 > 2) {
+                                                    System.out.print("Opção inválida\n");
+                                                    continue;
+                                                }
+                                                break;
+                                            } catch (InputMismatchException e) {
+                                                System.out.print("Inserção inválida\n");
+                                                sc.next();
+                                            }
+                                        }
+
+                                        if (opc4 == 1) {
+                                            while (true) {
+                                                System.out.print("Qual ingrediente deseja remover?\n[1] Pão\n[2] Hamburguer\n" +
+                                                        "[3] Salada Americana\n[4] Cebola Picada\n[5] Molho Defumado\n[6] Maionese\n[7] Pronto\n");
+
+                                                while (true) {
+                                                    try {
+                                                        opc5 = sc.nextInt();
+                                                        if (opc5 < 1 || opc5 > 7) {
+                                                            System.out.print("Opção inválida\n");
+                                                            continue;
+                                                        }
+                                                        break;
+                                                    } catch (InputMismatchException e) {
+                                                        System.out.print("Inserção inválida\n");
+                                                        sc.next();
+                                                    }
+                                                }
+
+                                                if (opc5 == 7) {
+                                                    break;
+                                                } else {
+                                                    americanoSimples.remove(IngredientesBurguerAmericano.values()[opc5 - 1]);
+                                                    System.out.print("Ingrediente removido.\n");
+                                                }
+                                            }
+                                        }
+                                        produtosPedidoAtual.add(americanoSimples);
+                                        System.out.print("Burguer Americano Simples adicionado.\n");
+
+                                    case 2: //burguer americano duplo
+                                        BurguerAmericanoDuplo americanoDuplo = new BurguerAmericanoDuplo();
+
+                                        System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+
+                                        while (true) {
+                                            try {
+                                                opc4 = sc.nextInt();
+                                                if (opc4 < 1 || opc4 > 2) {
+                                                    System.out.print("Opção inválida\n");
+                                                    continue;
+                                                }
+                                                break;
+                                            } catch (InputMismatchException e) {
+                                                System.out.print("Inserção inválida\n");
+                                                sc.next();
+                                            }
+                                        }
+
+                                        if (opc4 == 1) {
+                                            while (true) {
+
+                                                System.out.print("Qual ingrediente deseja remover?\n[1] Pão\n[2] Hamburguer\n" +
+                                                        "[3] Salada Americana\n[4] Cebola Picada\n[5] Molho Defumado\n[6] Maionese\n[7] Hamburguer 2\n[8] Pronto\n");
+
+                                                while (true) {
+                                                    try {
+                                                        opc5 = sc.nextInt();
+                                                        if (opc5 < 1 || opc5 > 8) {
+                                                            System.out.print("Opção inválida\n");
+                                                            continue;
+                                                        }
+                                                        break;
+                                                    } catch (InputMismatchException e) {
+                                                        System.out.print("Inserção inválida\n");
+                                                        sc.next();
+                                                    }
+                                                }
+
+                                                if (opc5 == 8) {
+                                                    break;
+                                                } else {
+
+                                                    americanoDuplo.remove(IngredientesBurguerAmericano.values()[opc5 - 1]);
+                                                    System.out.print("Ingrediente removido.\n");
+                                                }
+                                            }
+                                        }
+                                        produtosPedidoAtual.add(americanoDuplo);
+                                        System.out.print("Burguer Americano Duplo adicionado.\n");
+
+                                    case 3: //burguer americano triplo
+                                        BurguerAmericanoTriplo americanoTriplo = new BurguerAmericanoTriplo();
+
+                                        System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+
+                                        while (true) {
+                                            try {
+                                                opc4 = sc.nextInt();
+                                                if (opc4 < 1 || opc4 > 2) {
+                                                    System.out.print("Opção inválida\n");
+                                                    continue;
+                                                }
+                                                break;
+                                            } catch (InputMismatchException e) {
+                                                System.out.print("Inserção inválida\n");
+                                                sc.next();
+                                            }
+                                        }
+
+                                        if (opc4 == 1) {
+                                            while (true) {
+
+                                                System.out.print("Qual ingrediente deseja remover?\n[1] Pão\n[2] Hamburguer\n" +
+                                                        "[3] Salada Americana\n[4] Cebola Picada\n[5] Molho Defumado\n[6] Maionese\n" +
+                                                        "[7] Hamburguer 2\n[8] Hamburguer 3\n[9] Pronto\n");
+
+                                                while (true) {
+                                                    try {
+                                                        opc5 = sc.nextInt();
+                                                        if (opc5 < 1 || opc5 > 9) {
+                                                            System.out.print("Opção inválida\n");
+                                                            continue;
+                                                        }
+                                                        break;
+                                                    } catch (InputMismatchException e) {
+                                                        System.out.print("Inserção inválida\n");
+                                                        sc.next();
+                                                    }
+                                                }
+
+                                                if (opc5 == 9) {
+                                                    break;
+                                                } else {
+                                                    americanoTriplo.remove(IngredientesBurguerAmericano.values()[opc5 - 1]);
+                                                    System.out.print("Ingrediente removido.\n");
+                                                }
+                                            }
+                                        }
+                                        produtosPedidoAtual.add(americanoTriplo);
+                                        System.out.print("Burguer Americano Triplo adicionado.\n");
+                                }
                                 //lista ingredientes e chama função pra remover
                                 System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
                             case 6:
@@ -857,4 +1025,5 @@ public class Main {
         }
     }
 }
+
 
