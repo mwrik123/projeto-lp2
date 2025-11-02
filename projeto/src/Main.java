@@ -594,8 +594,6 @@ public class Main {
                                 produtosPedidoAtual.add(Xsalada);
                                 System.out.print("X-Salada adicionado ao pedido.\n");
 
-                                //lista ingredientes e chama função pra remover
-                                System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
                             case 4:
                                 //X-egg bacon burguer
 
@@ -859,3 +857,4 @@ public class Main {
         }
     }
 }
+
