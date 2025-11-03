@@ -431,7 +431,7 @@ public class Main {
                                                 if (opc5 == 6) {
                                                     break;
                                                 } else {
-                                                    croc.remove(IngredientesCroc.values()[opc6 - 1]);
+                                                    croc.remove(IngredientesCroc.values()[opc5 - 1]);
                                                 }
                                             }
 
@@ -481,7 +481,7 @@ public class Main {
                                                 if (opc5 == 7) {
                                                     break;
                                                 } else {
-                                                    parmegiana.remove(IngredientesCroc.values()[opc6 - 1]);
+                                                    parmegiana.remove(IngredientesCroc.values()[opc5 - 1]);
                                                 }
                                             }
 
@@ -531,9 +531,9 @@ public class Main {
                                                 if (opc5 == 9) {
                                                     break;
                                                 } else if (opc5 == 6 || opc5 == 7 || opc5 == 8) {
-                                                    americano.remove(IngredientesCroc.values()[opc6 + 1]);
+                                                    americano.remove(IngredientesCroc.values()[opc5 + 1]);
                                                 } else {
-                                                    americano.remove(IngredientesCroc.values()[opc6 - 1]);
+                                                    americano.remove(IngredientesCroc.values()[opc5 - 1]);
                                                 }
                                             }
 
@@ -547,9 +547,9 @@ public class Main {
 
                                 while (true) {
                                     try {
-                                        opc4 = sc.nextInt();
+                                        opc3 = sc.nextInt();
 
-                                        if (opc4 < 1 || opc4 > 2) {
+                                        if (opc3 < 1 || opc3 > 2) {
                                             System.out.print("Opção inválida\n");
                                             continue;
                                         }
@@ -560,7 +560,7 @@ public class Main {
                                     }
                                 }
 
-                                if (opc4 == 1) {
+                                if (opc3 == 1) {
 
                                     while (true) {
 
@@ -569,9 +569,9 @@ public class Main {
 
                                         while (true) {
                                             try {
-                                                opc5 = sc.nextInt();
+                                                opc4 = sc.nextInt();
 
-                                                if (opc5 < 1 || opc5 > 7) {
+                                                if (opc4 < 1 || opc4 > 7) {
                                                     System.out.print("Opção inválida\n");
                                                     continue;
                                                 }
@@ -582,10 +582,10 @@ public class Main {
                                             }
                                         }
 
-                                        if (opc5 == 7) {
+                                        if (opc4 == 7) {
                                             break;
                                         } else {
-                                            Xsalada.remove(IngredientesXSalada.values()[opc5 - 1]);
+                                            Xsalada.remove(IngredientesXSalada.values()[opc4 - 1]);
                                             System.out.print("Ingrediente removido.\n");
                                         }
                                     }
@@ -596,7 +596,57 @@ public class Main {
 
                             case 4:
                                 //X-egg bacon burguer
+                                XEggBaconBurguer x_egg = new XeggBaconBurguer();
 
+                                //lista ingredientes e chama função pra remover
+                                System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
+
+                                while (true) {
+                                    try {
+                                        opc3 = sc.nextInt();
+
+                                        if (opc3 < 1 || opc3 > 2) {
+                                            System.out.print("Opção inválida\n");
+                                            continue;
+                                        }
+                                        break;
+                                    } catch (InputMismatchException e) {
+                                        System.out.print("Inserção inválida\n");
+                                    }
+                                }
+
+                                if (opc3 == 1) {
+                                        while (true) {
+                                            System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer\n" +
+                                                    "[2] Muçarela\n[3] Ovo\n[4] Bacon\n[5] Crocante\n[6] Maionese\n[7] Pronto");
+
+                                            while (true) {
+                                                try {
+                                                    opc4 = sc.nextInt();
+
+                                                    if (opc4 < 1 || opc4 > 7) {
+                                                        System.out.print("Opção inválida\n");
+                                                        continue;
+                                                    }
+                                                    break;
+                                                } catch (InputMismatchException e) {
+                                                    System.out.print("Inserção inválida\n");
+                                                }
+                                            }
+
+                                            if (opc4 == 7) {
+                                                break;
+                                            } else {
+                                                americano.remove+(IngredientesXEggBaconBurguer.values()[opc4 - 1]);
+                                            }
+                                        }
+
+                                    }
+                                    produtosPedidoAtual.add(x_egg);
+                                    System.out.print("X-Egg Bacon Burguer adicionado ao pedido.\n");
+                                    default:
+                                        //exception ou implementa while
+                                }
                                 //lista ingredientes e chama função pra remover
                                 System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
                             case 5:
@@ -1025,5 +1075,6 @@ public class Main {
         }
     }
 }
+
 
 
