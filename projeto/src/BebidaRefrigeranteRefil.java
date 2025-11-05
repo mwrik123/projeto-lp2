@@ -1,15 +1,15 @@
 public class BebidaRefrigeranteRefil implements Produtos {
     protected static double preco;
-    protected String nome;
+    protected RefriSabores sabor;
 
-    BebidaRefrigeranteRefil() {
-        nome = "Refrigerante (Refil)";
+    BebidaRefrigeranteRefil(RefriSabores sabor) {
+        this.sabor = sabor;
         preco = 12.00;
     }
 
     @Override
     public void imprime() {
-        System.out.print(nome + "\n");
+        System.out.print(sabor);
         System.out.print("Preço: " + preco + "\n");
     }
 }

@@ -1,15 +1,15 @@
 public class ChaGelado implements Produtos {
     protected static double preco;
-    protected String nome;
+    protected ChaSabor sabor;
 
-    ChaGelado() {
-        nome = "Chá Gelado";
+    ChaGelado(ChaSabor sabor) {
+        this.sabor = sabor;
         preco = 7.00;
     }
 
     @Override
     public void imprime() {
-        System.out.print(nome + "\n");
+        System.out.print(sabor);
         System.out.print("Preço: " + preco + "\n");
     }
 }

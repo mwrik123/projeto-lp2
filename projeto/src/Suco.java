@@ -1,17 +1,15 @@
 public class Suco implements Produtos {
     protected static double preco;
-    protected String nome;
-    protected String sabor;
+    protected Sucos sabor;
 
-    Suco(String saborSuco) {
+    Suco(Sucos saborSuco) {
         sabor = saborSuco;
-        nome = "Suco " + sabor;
         preco = 6.00;
     }
 
     @Override
     public void imprime() {
-        System.out.print(nome + "\n");
+        System.out.print(sabor);
         System.out.print("Preço: " + preco + "\n");
     }
 }
