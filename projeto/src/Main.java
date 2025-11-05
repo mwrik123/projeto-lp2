@@ -320,7 +320,7 @@ public class Main {
 
                                         HamburguerTriplo hamburguerTriplo = new HamburguerTriplo();
 
-                                        System.out.print("[1] Frango\n[2] Carne\n");
+                                        System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
 
                                         while (true) {
                                             try {
@@ -335,36 +335,19 @@ public class Main {
                                                 System.out.print("Inserção inválida\n");
                                             }
                                         }
-                                        
-                                        if(opc4 == 1){ //hamburguer triplo de frango
-                                        System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
 
-                                        while (true) {
-                                            try {
-                                                opc5 = sc.nextInt();
-
-                                                if (opc5 < 1 || opc5 > 2) {
-                                                    System.out.print("Opção inválida\n");
-                                                    continue;
-                                                }
-                                                break;
-                                            } catch (InputMismatchException e) {
-                                                System.out.print("Inserção inválida\n");
-                                            }
-                                        }
-
-                                            if (opc5 == 1) {
+                                            if (opc4 == 1) {
         
                                                 while (true) {
                                                     System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
-                                                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Frango\n" +
-                                                            "[8] Salsicha\n[9] Hamburguer 2\n [10] Hamburguer 3\n[11] Salada 2\n [12] Pronto\n");
+                                                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Carne\n[8] Frango\n" +
+                                                            "[9] Salsicha\n[10] Hamburguer 2\n [11] Hamburguer 3\n[12] Salada 2\n [13] Pronto\n");
     
                                                     while (true) {
                                                         try {
-                                                            opc6 = sc.nextInt();
+                                                            opc5 = sc.nextInt();
     
-                                                            if (opc6 < 1 || opc6 > 12) {
+                                                            if (opc5 < 1 || opc5 > 13) {
                                                                 System.out.print("Opção inválida\n");
                                                                 continue;
                                                             }
@@ -374,70 +357,14 @@ public class Main {
                                                         }
                                                     }
     
-                                                    if (opc6 == 12) {
+                                                    if (opc5 == 13) {
                                                         break;
-                                                    } else if (op6 < 7){
-                                                        hamburguerTriplo.remove(Ingredientes.values()[opc6 - 1]);
                                                     } else {
-                                                        hamburguerTriplo.remove(Ingredientes.values()[opc6]);
-                                                    }
-                                                }
-    
-                                            }
-                                            produtosPedidoAtual.add(hamburguerTriplo);
-                                        }
-
-                                        if(opc4 == 2){ //hamburguer triplo de carne
-                                            System.out.print("Deseja remover algum ingrediente?[1] Sim, [2] Não\n");
-    
-                                            while (true) {
-                                                try {
-                                                    opc5 = sc.nextInt();
-    
-                                                    if (opc5 < 1 || opc5 > 2) {
-                                                        System.out.print("Opção inválida\n");
-                                                        continue;
-                                                    }
-                                                    break;
-                                                } catch (InputMismatchException e) {
-                                                    System.out.print("Inserção inválida\n");
-                                                }
-                                            }
-    
-                                            if (opc5 == 1) {
-
-
-                                                while (true) {
-                                                    System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
-                                                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Carne\n" +
-                                                            "[8] Salsicha\n[9] Hamburguer 2\n [10] Hamburguer 3\n[11] Salada 2\n [12] Pronto\n");
-    
-                                                    while (true) {
-                                                        try {
-                                                            opc6 = sc.nextInt();
-    
-                                                            if (opc6 < 1 || opc6 > 12) {
-                                                                System.out.print("Opção inválida\n");
-                                                                continue;
-                                                            }
-                                                            break;
-                                                        } catch (InputMismatchException e) {
-                                                            System.out.print("Inserção inválida\n");
-                                                        }
-                                                    }
-    
-                                                    if (opc6 == 12) {
-                                                        break;
-                                                    } else if(opc6 < 8){
                                                         hamburguerTriplo.remove(Ingredientes.values()[opc6 - 1]);
-                                                    } else {
-                                                        hamburguerTriplo.remove(Ingredientes.values()[opc6]);
                                                     }
-                                                }
-    
+                                                } 
                                             }
-                                            produtosPedidoAtual.add(hamburguerTriplo);
-                                        }
+                                            produtosPedidoAtual.add(hamburguerTriplo);                                        
                                         
                             case 2://Croc
 
@@ -1146,6 +1073,7 @@ public class Main {
         }
     }
 }
+
 
 
 
