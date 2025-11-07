@@ -6,4 +6,9 @@ public class CrocParmegiana extends CrocSimples implements Produtos{
         ingredientesCrocs.add(IngredientesCroc.TOMATE);
         novoPreco(2);
     }
+
+    @Override
+    public void exibirNome() {
+        System.out.print("Croc parmegiana\n");
+    }
 }

@@ -13,4 +13,9 @@ public class BatataFrita implements Produtos {
         System.out.print(nome + "\n");
         System.out.print("Preço: " + preco + "\n");
     }
+
+    @Override
+    public void exibirNome() {
+        System.out.print(nome);
+    }
 }

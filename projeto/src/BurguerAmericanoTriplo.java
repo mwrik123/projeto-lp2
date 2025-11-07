@@ -6,4 +6,9 @@ public class BurguerAmericanoTriplo extends BurguerAmericano implements Produtos
         ingredientes.add(IngredientesBurguerAmericano.values()[7]);
         novoPreco(3);
     }
+
+    @Override
+    public void exibirNome() {
+        System.out.print("Burguer americano triplo\n");
+    }
 }

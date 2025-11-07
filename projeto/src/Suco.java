@@ -12,4 +12,9 @@ public class Suco implements Produtos {
         System.out.print(sabor);
         System.out.print("Preço: " + preco + "\n");
     }
+
+    @Override
+    public void exibirNome() {
+        System.out.print("Suco\nTipo: "+sabor+"\n");
+    }
 }

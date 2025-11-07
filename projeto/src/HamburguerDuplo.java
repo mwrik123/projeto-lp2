@@ -8,4 +8,8 @@ public class HamburguerDuplo extends Hamburguer implements Produtos{
         novoPreco(2);
     }
 
+    @Override
+    public void exibirNome() {
+        System.out.print("Hamburguer duplo\n");
+    }
 }

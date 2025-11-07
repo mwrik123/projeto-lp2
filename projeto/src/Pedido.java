@@ -1,9 +1,5 @@
 import java.util.ArrayList;
 
-interface Produtos{
-    void imprime();
-}
-
 public class Pedido{
     int id;
     String nome;

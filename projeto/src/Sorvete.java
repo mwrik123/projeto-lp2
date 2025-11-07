@@ -1,27 +1,23 @@
 public class Sorvete implements Produtos {
 
     protected static double preco;
-    protected String nome;
-    protected String sabor;
+    protected SorveteSabor sabor;
 
-    Sorvete(String saborSorvete) {
-        sabor = saborSorvete;
-        nome = "Sorvete de (" + sabor + ")";
-
-        if (saborSorvete.equals("Chocolate") || saborSorvete.equals("Misto")) {
-            preco = 2.00;
-        } else if (saborSorvete.equals("Creme")) {
-            preco = 1.50;
-        } else {
-            preco = 1.50;
-        }
+    Sorvete(SorveteSabor sabor) {
+        this.sabor = sabor;
+        preco = 3.0;
     }
 
     @Override
     public void imprime() {
 
-        System.out.print(nome + "\n");
+        System.out.print(sabor);
         System.out.print("Preço: " + preco + "\n");
 
+    }
+
+    @Override
+    public void exibirNome() {
+        System.out.print("Sorvete\nTipo: "+sabor+"\n");
     }
 }

@@ -6,4 +6,9 @@ public class CrocAmericano extends CrocSimples implements Produtos{
         }
         novoPreco(3);
     }
+
+    @Override
+    public void exibirNome() {
+        System.out.print("Croc americano\n");
+    }
 }

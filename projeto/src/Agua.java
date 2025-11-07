@@ -12,4 +12,9 @@ public class Agua implements Produtos {
         System.out.print(agua);
         System.out.print("Preço: " + preco + "\n");
     }
+
+    @Override
+    public void exibirNome() {
+        System.out.print("Água\nTipo:" + agua +"\n");
+    }
 }

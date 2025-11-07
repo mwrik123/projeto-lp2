@@ -36,6 +36,11 @@ public class Hamburguer implements Produtos{
         System.out.print("Preço: "+preco+"\n");
     }
 
+    @Override
+    public void exibirNome() {
+        System.out.print("Hamburguer Simples\n");
+    }
+
     void novoPreco (int i){
         if(i == 2){
             Hamburguer.preco = 20.0;

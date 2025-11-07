@@ -28,6 +28,10 @@ public class BurguerAmericano implements Produtos {
         System.out.print("Preço: " + preco + "\n");
     }
 
+    @Override
+    public void exibirNome() {
+        System.out.print("Burguer americano\n");
+    }
 
     void novoPreco(int versao) {
         if (versao == 2) { 

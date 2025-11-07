@@ -17,11 +17,17 @@ public class CrocSimples implements Produtos{
         ingredientesCrocs.remove(ingrediente);
     }
 
+    @Override
     public void imprime(){
         for(IngredientesCroc ingredientes1 : ingredientesCrocs){
             System.out.print(ingredientes1+"\n");
         }
         System.out.print("Preço: "+preco+"\n");
+    }
+
+    @Override
+    public void exibirNome() {
+        System.out.print("Croc simples\n");
     }
 
     void novoPreco(int i){
@@ -32,4 +38,6 @@ public class CrocSimples implements Produtos{
             CrocSimples.preco = 25.0;
         }
     }
+
+
 }
