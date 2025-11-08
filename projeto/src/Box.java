@@ -23,4 +23,9 @@ public class Box implements Produtos {
     public void exibirNome() {
         System.out.print("Box");
     }
+
+    @Override
+    public double getValor() {
+        return preco;
+    }
 }

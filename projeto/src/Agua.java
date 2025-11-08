@@ -2,9 +2,15 @@ public class Agua implements Produtos {
     protected static double preco;
     protected Aguas agua;
 
-    Agua(Aguas agua) {
+    Agua(Aguas agua, int i) {
         this.agua = agua;
-        preco = 5.00;
+        if(i == 1){
+            preco = 5.00;
+        } else if(i == 2){
+            preco = 6.00;
+        } else {
+            preco = 9.00;
+        }
     }
 
     @Override
@@ -16,5 +22,10 @@ public class Agua implements Produtos {
     @Override
     public void exibirNome() {
         System.out.print("Água\nTipo:" + agua +"\n");
+    }
+
+    @Override
+    public double getValor() {
+        return preco;
     }
 }

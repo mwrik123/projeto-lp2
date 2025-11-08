@@ -12,4 +12,9 @@ public class HamburguerDuplo extends Hamburguer implements Produtos{
     public void exibirNome() {
         System.out.print("Hamburguer duplo\n");
     }
+
+    @Override
+    public double getValor() {
+        return super.getValor();
+    }
 }

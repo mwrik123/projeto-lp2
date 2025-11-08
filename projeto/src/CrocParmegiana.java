@@ -11,4 +11,9 @@ public class CrocParmegiana extends CrocSimples implements Produtos{
     public void exibirNome() {
         System.out.print("Croc parmegiana\n");
     }
+
+    @Override
+    public double getValor() {
+        return super.getValor();
+    }
 }

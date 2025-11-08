@@ -17,4 +17,9 @@ public class ChaGelado implements Produtos {
     public void exibirNome() {
         System.out.print("Chá gelado\nTipo:" +sabor+"\n");
     }
+
+    @Override
+    public double getValor() {
+        return preco;
+    }
 }

@@ -18,4 +18,9 @@ public class FileFrangoEmpanado implements Produtos {
     public void exibirNome() {
         System.out.print(nome);
     }
+
+    @Override
+    public double getValor() {
+        return preco;
+    }
 }

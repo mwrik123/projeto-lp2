@@ -10,4 +10,9 @@ public class BurguerAmericanoDuplo extends BurguerAmericano implements Produtos 
     public void exibirNome() {
         System.out.print("Burguer americano duplo\n");
     }
+
+    @Override
+    public double getValor() {
+        return super.getValor();
+    }
 }

@@ -33,6 +33,11 @@ public class BurguerAmericano implements Produtos {
         System.out.print("Burguer americano\n");
     }
 
+    @Override
+    public double getValor() {
+        return preco;
+    }
+
     void novoPreco(int versao) {
         if (versao == 2) { 
             BurguerAmericano.preco = 28.0;

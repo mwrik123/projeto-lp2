@@ -18,4 +18,9 @@ public class BebidaRefrigeranteLata implements Produtos {
     public void exibirNome() {
         System.out.print("Refrigerante lata\nTipo:"+ sabor+"\n");
     }
+
+    @Override
+    public double getValor() {
+        return preco;
+    }
 }

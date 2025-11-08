@@ -11,4 +11,9 @@ public class BurguerAmericanoTriplo extends BurguerAmericano implements Produtos
     public void exibirNome() {
         System.out.print("Burguer americano triplo\n");
     }
+
+    @Override
+    public double getValor() {
+        return super.getValor();
+    }
 }

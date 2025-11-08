@@ -6,15 +6,19 @@ import java.util.InputMismatchException;
 
 public class Main {
     public static void main(String[] args){
+        Caixa caixa = new Caixa();
         int id = 0;
         while (true){
             System.out.print("===== Bem-vindo(a)! =====\n");
             System.out.print("[1] Cadastrar pedido\n[2] Entregar pedido\n[3] Pedidos pendentes\n[4] Verificar saldo do caixa\n[5] Feixar o caixa\n");
             Scanner sc = new Scanner(System.in);
 
+            int opc;
+
             while(true){
                 try{
-                    int opc = sc.nextInt();
+                    System.out.print("Opção: ");
+                    opc = sc.nextInt();
 
                     if(opc < 1 || opc > 5){
                         System.out.print("Opção inválida\n");
@@ -23,10 +27,10 @@ public class Main {
                     break;
                 } catch (InputMismatchException e){
                     System.out.print("Inserção inválida\n");
+                    sc.nextLine();
                 }
             }
 
-            int opc = sc.nextInt();
             int opc2 = 0;
             int opc3 = 0;
             int opc4 = 0;
@@ -42,7 +46,7 @@ public class Main {
                     while(true){
                         System.out.print("[1] Hamburguer (simples/ duplo/ triplo)\n[2] Croc (simples/ parmegiana/ americano)\n" +
                                 "[3] X-salada\n[4] X-egg bacon burguer\n[5] Burguer americano(simples/ duplo/ triplo)\n[6]Box-combo\n" +
-                                "[7] Sorvete (chocolate/ misto/ creme)\n[8] Porções (Batata/ Filé de frango empanado)\n[9] Bebida\n[10] Sair");
+                                "[7] Sorvete (chocolate/ misto/ creme)\n[8] Porções (Batata/ Filé de frango empanado)\n[9] Bebida\n[10] Sair\n");
 
                         while (true){
                             try{
@@ -54,9 +58,13 @@ public class Main {
                                 break;
                             } catch (InputMismatchException e){
                                 System.out.print("Inserção inválida\n");
+                                sc.nextLine();
                             }
                         }
 
+                        if(opc2 == 10){
+                            break;
+                        }
                         switch (opc2){
                             case 1://hamburguer
                                 System.out.print("[1] Simples\n[2] Duplo\n[3] Triplo\n");
@@ -72,11 +80,12 @@ public class Main {
                                         break;
                                     } catch (InputMismatchException e){
                                         System.out.print("Inserção inválida\n");
+                                        sc.nextLine();
                                     }
                                 }
 
                                 simpDuplTrip(produtosPedidoAtual, opc3);
-                                        
+                                break;
                             case 2://Croc
 
                                 System.out.print("[1] Simples\n[2] Parmegiana\n[3] Americano\n");
@@ -92,14 +101,18 @@ public class Main {
                                         break;
                                     } catch (InputMismatchException e){
                                         System.out.print("Inserção inválida\n");
+                                        sc.nextLine();
                                     }
                                 }
 
                                 simpParmAmer(produtosPedidoAtual, opc3);
+                                break;
                             case 3: //X-Salada
                                 montaXsalada(produtosPedidoAtual);
+                                break;
                             case 4://X-egg bacon burguer
                                 montaXegg(produtosPedidoAtual);
+                                break;
                             case 5://Burguer Americano
 
                                 System.out.print("[1] Simples\n[2] Duplo\n[3] Triplo\n");
@@ -115,11 +128,12 @@ public class Main {
                                         break;
                                     } catch (InputMismatchException e){
                                         System.out.print("Inserção inválida\n");
-                                        sc.next();
+                                        sc.nextLine();
                                     }
                                 }
 
                                 burSimpDuplTrip(produtosPedidoAtual, opc3);
+                                break;
                             case 6:
                                 //Box Combo
                                 ArrayList<Produtos> box = new ArrayList<>();
@@ -137,7 +151,7 @@ public class Main {
                                         break;
                                     } catch (InputMismatchException e) {
                                         System.out.print("Inserção inválida\n");
-                                        sc.next();
+                                        sc.nextLine();
                                     }
                                 }
                                 
@@ -154,7 +168,7 @@ public class Main {
                                             break;
                                         } catch (InputMismatchException e) {
                                             System.out.print("Inserção inválida\n");
-                                            sc.next();
+                                            sc.nextLine();
                                         }
                                     }
                                     
@@ -172,7 +186,7 @@ public class Main {
                                             break;
                                         } catch (InputMismatchException e) {
                                             System.out.print("Inserção inválida\n");
-                                            sc.next();
+                                            sc.nextLine();
                                         }
                                     }
 
@@ -194,7 +208,7 @@ public class Main {
                                             break;
                                         } catch (InputMismatchException e) {
                                             System.out.print("Inserção inválida\n");
-                                            sc.next();
+                                            sc.nextLine();
                                         }
                                     }
 
@@ -216,7 +230,7 @@ public class Main {
                                         break;
                                     } catch (InputMismatchException e) {
                                         System.out.print("Inserção inválida\n");
-                                        sc.next();
+                                        sc.nextLine();
                                     }
                                 }
 
@@ -233,7 +247,7 @@ public class Main {
                                             break;
                                         } catch (InputMismatchException e) {
                                             System.out.print("Inserção inválida\n");
-                                            sc.next();
+                                            sc.nextLine();
                                         }
                                     }
 
@@ -251,7 +265,7 @@ public class Main {
                                             break;
                                         } catch (InputMismatchException e) {
                                             System.out.print("Inserção inválida\n");
-                                            sc.next();
+                                            sc.nextLine();
                                         }
                                     }
 
@@ -273,7 +287,7 @@ public class Main {
                                             break;
                                         } catch (InputMismatchException e) {
                                             System.out.print("Inserção inválida\n");
-                                            sc.next();
+                                            sc.nextLine();
                                         }
                                     }
 
@@ -295,7 +309,7 @@ public class Main {
                                         break;
                                     } catch (InputMismatchException e) {
                                         System.out.print("Inserção inválida\n");
-                                        sc.next();
+                                        sc.nextLine();
                                     }
                                 }
 
@@ -319,7 +333,7 @@ public class Main {
                                         break;
                                     } catch (InputMismatchException e) {
                                         System.out.print("Inserção inválida\n");
-                                        sc.next();
+                                        sc.nextLine();
                                     }
                                 }
 
@@ -342,7 +356,7 @@ public class Main {
                                         break;
                                     } catch (InputMismatchException e) {
                                         System.out.print("Inserção inválida\n");
-                                        sc.next();
+                                        sc.nextLine();
                                     }
                                 }
 
@@ -365,7 +379,7 @@ public class Main {
                                         break;
                                     } catch (InputMismatchException e) {
                                         System.out.print("Inserção inválida\n");
-                                        sc.next();
+                                        sc.nextLine();
                                     }
                                 }
 
@@ -379,9 +393,11 @@ public class Main {
                                 //se nao:
                                 Box boxtotal = new Box(box);
                                 produtosPedidoAtual.add(boxtotal);
+                                break;
                                 //implementa montagem do combo a partir do que da pra colocar
                             case 7://Sorvete
                                 montaSorvete(produtosPedidoAtual);
+                                break;
                             case 8://batata frita
                                 System.out.print("[1] Batata frita\n[2] Filé de frango empanado\n");
 
@@ -396,49 +412,98 @@ public class Main {
                                         break;
                                     } catch (InputMismatchException e) {
                                         System.out.print("Inserção inválida\n");
+                                        sc.nextLine();
                                     }
                                 }
 
                                 batataFile(produtosPedidoAtual, opc3);
+                                break;
                             case 9://bebidas
-                                    while (true){
-                                        System.out.print("[1] Refrigerante (refil/lata)\n[2] Sucos (laranja/dell vale)\n[3] Chá gelado\n[4] Água(mineral/ com gás/ saborizada)\n[5] Pronto");
+                                while (true){
+                                    System.out.print("[1] Refrigerante (refil/lata)\n[2] Sucos (laranja/dell vale)\n[3] Chá gelado\n[4] Água(mineral/ com gás/ saborizada)\n[5] Pronto");
 
-                                        while (true) {
-                                            try {
-                                                opc3 = sc.nextInt();
+                                    while (true) {
+                                        try {
+                                            opc3 = sc.nextInt();
 
-                                                if (opc3 < 1 || opc3 > 5) {
-                                                    System.out.print("Opção inválida\n");
-                                                    continue;
-                                                }
-                                                break;
-                                            } catch (InputMismatchException e) {
-                                                System.out.print("Inserção inválida\n");
+                                            if (opc3 < 1 || opc3 > 5) {
+                                                System.out.print("Opção inválida\n");
+                                                continue;
                                             }
-                                        }
-
-                                        if(opc3 == 5){
                                             break;
-                                        } else {
-                                            bebidaOpc(produtosPedidoAtual, opc3);
+                                        } catch (InputMismatchException e) {
+                                            System.out.print("Inserção inválida\n");
+                                            sc.nextLine();
                                         }
                                     }
-                            case 10://Sair
+
+                                    if(opc3 == 5){
+                                        break;
+                                    } else {
+                                        bebidaOpc(produtosPedidoAtual, opc3);
+                                    }
+                                }
                                 break;
                         }
                     }
-                    
+                    Pedido pedidoatual = new Pedido(id, nome, produtosPedidoAtual);
+                    caixa.pedidos.add(pedidoatual);
+                    break;
                 case 2:
+                    while(true){
+                        if(caixa.pedidos.isEmpty()){
+                            System.out.print("Lista de pedidos vazia, adicione um pedido!\n");
+                            break;
+                        }
+
+                        System.out.print("ID do pedido pronto:\n");
+
+                        while (true) {
+                            try {
+                                opc2 = sc.nextInt();
+
+                                if (opc2 < 1 || opc2 > caixa.pedidos.size() - 1) {
+                                    System.out.print("Opção inválida/Pedido inexistente\n");
+                                    continue;
+                                }
+                                break;
+                            } catch (InputMismatchException e) {
+                                System.out.print("Inserção inválida\n");
+                                sc.nextLine();
+                            }
+                        }
+
+                        if(caixa.pedidos.get(0).id < opc2){
+                            System.out.print("O pedido "+caixa.pedidos.get(0).id+" de "+caixa.pedidos.get(0).nome+" precisa ser entregue antes de pedidos posteriores\n");
+                            break;
+                        } else if(caixa.pedidos.get(0).id > opc2){
+                            System.out.print("O pedido de id "+opc2+" já foi entregue.\n");
+                            break;
+                        } else {
+                            caixa.addAoValorTotal(caixa.pedidos.get(0));
+                            caixa.pedidos.remove(0);
+                            break;
+                        }
+                    }
+                    break;
                     //remove pedido da lista de pedidos pendentes e add saldo ao caixa
                 case 3:
+                    System.out.print("Pedidos pendentes:\n");
+                    caixa.exibePedidos();
+                    break;
                     //exibe tabela com pedidos pendentes
                 case 4:
+                    System.out.print("Saldo atual do caixa: "+caixa.getValorTotal()+"\n");
+                    break;
                     //exibe saldo do caixa
                 case 5:
-                    //fecha caixa
-                default:
-                    //exception ou while
+                    System.out.print("Preparando para fechamendo de caixa...\n");
+                    System.out.print("Valor final: "+caixa.getValorTotal()+"\n");
+                    System.out.print("Fechamento concluído!");
+                    break;
+            }
+            if(opc == 5){
+                break;
             }
         }
     }
@@ -462,6 +527,7 @@ public class Main {
                     break;
                 } catch (InputMismatchException e) {
                     System.out.print("Inserção inválida\n");
+                    sc.nextLine();
                 }
             }
 
@@ -480,6 +546,7 @@ public class Main {
                             break;
                         } catch (InputMismatchException e) {
                             System.out.print("Inserção inválida\n");
+                            sc.nextLine();
                         }
                     }
 
@@ -512,6 +579,7 @@ public class Main {
                     break;
                 } catch (InputMismatchException e) {
                     System.out.print("Inserção inválida\n");
+                    sc.nextLine();
                 }
             }
 
@@ -531,6 +599,7 @@ public class Main {
                             break;
                         } catch (InputMismatchException e) {
                             System.out.print("Inserção inválida\n");
+                            sc.nextLine();
                         }
                     }
 
@@ -565,6 +634,7 @@ public class Main {
                     break;
                 } catch (InputMismatchException e) {
                     System.out.print("Inserção inválida\n");
+                    sc.nextLine();
                 }
             }
 
@@ -586,6 +656,7 @@ public class Main {
                             break;
                         } catch (InputMismatchException e) {
                             System.out.print("Inserção inválida\n");
+                            sc.nextLine();
                         }
                     }
 
@@ -618,6 +689,7 @@ public class Main {
                     break;
                 } catch (InputMismatchException e) {
                     System.out.print("Inserção inválida\n");
+                    sc.nextLine();
                 }
             }
 
@@ -639,6 +711,7 @@ public class Main {
                             break;
                         } catch (InputMismatchException e) {
                             System.out.print("Inserção inválida\n");
+                            sc.nextLine();
                         }
                     }
 
@@ -674,6 +747,7 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
+                sc.nextLine();
             }
         }
 
@@ -695,6 +769,7 @@ public class Main {
                         break;
                     } catch (InputMismatchException e) {
                         System.out.print("Inserção inválida\n");
+                        sc.nextLine();
                     }
                 }
 
@@ -728,6 +803,7 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
+                sc.nextLine();
             }
         }
 
@@ -749,6 +825,7 @@ public class Main {
                         break;
                     } catch (InputMismatchException e) {
                         System.out.print("Inserção inválida\n");
+                        sc.nextLine();
                     }
                 }
 
@@ -782,6 +859,7 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
+                sc.nextLine();
             }
         }
 
@@ -803,6 +881,7 @@ public class Main {
                         break;
                     } catch (InputMismatchException e) {
                         System.out.print("Inserção inválida\n");
+                        sc.nextLine();
                     }
                 }
 
@@ -836,6 +915,7 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
+                sc.nextLine();
             }
         }
 
@@ -857,6 +937,7 @@ public class Main {
                         break;
                     } catch (InputMismatchException e) {
                         System.out.print("Inserção inválida\n");
+                        sc.nextLine();
                     }
                 }
 
@@ -892,7 +973,7 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
-                sc.next();
+                sc.nextLine();
             }
         }
 
@@ -914,7 +995,7 @@ public class Main {
                         break;
                     } catch (InputMismatchException e) {
                         System.out.print("Inserção inválida\n");
-                        sc.next();
+                        sc.nextLine();
                     }
                 }
 
@@ -951,6 +1032,7 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
+                sc.nextLine();
             }
         }
 
@@ -970,6 +1052,7 @@ public class Main {
                         break;
                     } catch (InputMismatchException e) {
                         System.out.print("Inserção inválida\n");
+                        sc.nextLine();
                     }
                 }
 
@@ -1002,7 +1085,7 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
-                sc.next();
+                sc.nextLine();
             }
         }
 
@@ -1021,7 +1104,7 @@ public class Main {
                         break;
                     } catch (InputMismatchException e) {
                         System.out.print("Inserção inválida\n");
-                        sc.next();
+                        sc.nextLine();
                     }
                 }
 
@@ -1054,7 +1137,7 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
-                sc.next();
+                sc.nextLine();
             }
         }
 
@@ -1074,7 +1157,7 @@ public class Main {
                         break;
                     } catch (InputMismatchException e) {
                         System.out.print("Inserção inválida\n");
-                        sc.next();
+                        sc.nextLine();
                     }
                 }
 
@@ -1108,7 +1191,7 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
-                sc.next();
+                sc.nextLine();
             }
         }
 
@@ -1129,7 +1212,7 @@ public class Main {
                         break;
                     } catch (InputMismatchException e) {
                         System.out.print("Inserção inválida\n");
-                        sc.next();
+                        sc.nextLine();
                     }
                 }
 
@@ -1163,6 +1246,7 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
+                sc.nextLine();
             }
         }
 
@@ -1200,6 +1284,7 @@ public class Main {
                         break;
                     } catch (InputMismatchException e){
                         System.out.print("Inserção inválida\n");
+                        sc.nextLine();
                     }
                 }
 
@@ -1208,6 +1293,7 @@ public class Main {
                 produtos.add(refil);
 
                 System.out.print("Refrigerante Refil adicionado.\n");
+                break;
             case 2: //refri lata
                 System.out.print("[1] Fanta uva\n[2] Fanta Laranja\n[3] Guaraná\n[4] Coca-cola\n[5] Pepsi\n");
 
@@ -1222,6 +1308,7 @@ public class Main {
                         break;
                     } catch (InputMismatchException e){
                         System.out.print("Inserção inválida\n");
+                        sc.nextLine();
                     }
                 }
 
@@ -1230,6 +1317,7 @@ public class Main {
                 produtos.add(lata);
 
                 System.out.print("Refrigerante lata adicionado.\n");
+                break;
         }
     }
 
@@ -1250,6 +1338,7 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
+                sc.nextLine();
             }
         }
 
@@ -1274,6 +1363,7 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
+                sc.nextLine();
             }
         }
 
@@ -1299,10 +1389,11 @@ public class Main {
                 break;
             } catch (InputMismatchException e) {
                 System.out.print("Inserção inválida\n");
+                sc.nextLine();
             }
         }
 
-        Agua agua = new Agua(Aguas.values()[opc-1]);
+        Agua agua = new Agua(Aguas.values()[opc-1], opc);
         produtos.add(agua);
     }
 
@@ -1325,11 +1416,12 @@ public class Main {
                         break;
                     } catch (InputMismatchException e) {
                         System.out.print("Inserção inválida\n");
+                        sc.nextLine();
                     }
                 }
 
                 montaHambSimp(produtos, opc);
-
+                break;
             case 2://hamburguer duplo
                 System.out.print("[1] Frango\n[2] Carne\n");
 
@@ -1344,12 +1436,15 @@ public class Main {
                         break;
                     } catch (InputMismatchException e) {
                         System.out.print("Inserção inválida\n");
+                        sc.nextLine();
                     }
                 }
 
                 montaHambDupl(produtos, opc);
+                break;
             case 3: //hamburguer Triplo
                 montaHambTrip(produtos);
+                break;
         }
     }
 
@@ -1357,10 +1452,13 @@ public class Main {
         switch (i) {
             case 1: //Croc simples
                 montaCrocSimp(produtos);
+                break;
             case 2://Croc parmegiana
                 montaCrocParm(produtos);
+                break;
             case 3: //Croc americano
                 montaCrocAmer(produtos);
+                break;
         }
     }
 
@@ -1368,10 +1466,13 @@ public class Main {
         switch (i) {
             case 1: //burguer americano simples
                 montaAmerSimp(produtos);
+                break;
             case 2: //burguer americano duplo
                 montaAmerDupl(produtos);
+                break;
             case 3: //burguer americano triplo
                 montaAmerTrip(produtos);
+                break;
         }
     }
 
@@ -1379,8 +1480,10 @@ public class Main {
         switch (i) {
             case 1://batata
                 montaBatata(produtos);
+                break;
             case 2://filé
                 montaFile(produtos);
+                break;
         }
     }
 
@@ -1403,16 +1506,21 @@ public class Main {
                         break;
                     } catch (InputMismatchException e) {
                         System.out.print("Inserção inválida\n");
+                        sc.nextLine();
                     }
                 }
 
                 montaRefri(produtos, opc);
+                break;
             case 2: //sucos
                 montaSuco(produtos);
+                break;
             case 3://chá gelado
                 montaChaGel(produtos);
+                break;
             case 4:
                 montaAgua(produtos);
+                break;
         }
     }
 }

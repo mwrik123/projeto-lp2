@@ -20,4 +20,9 @@ public class Sorvete implements Produtos {
     public void exibirNome() {
         System.out.print("Sorvete\nTipo: "+sabor+"\n");
     }
+
+    @Override
+    public double getValor() {
+        return preco;
+    }
 }

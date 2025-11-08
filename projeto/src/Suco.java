@@ -17,4 +17,9 @@ public class Suco implements Produtos {
     public void exibirNome() {
         System.out.print("Suco\nTipo: "+sabor+"\n");
     }
+
+    @Override
+    public double getValor() {
+        return preco;
+    }
 }

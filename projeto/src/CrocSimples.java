@@ -30,6 +30,11 @@ public class CrocSimples implements Produtos{
         System.out.print("Croc simples\n");
     }
 
+    @Override
+    public double getValor() {
+        return preco;
+    }
+
     void novoPreco(int i){
         if(i == 2){
             CrocSimples.preco = 20.0;

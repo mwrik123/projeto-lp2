@@ -11,4 +11,9 @@ public class CrocAmericano extends CrocSimples implements Produtos{
     public void exibirNome() {
         System.out.print("Croc americano\n");
     }
+
+    @Override
+    public double getValor() {
+        return super.getValor();
+    }
 }

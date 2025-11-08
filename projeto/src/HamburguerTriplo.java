@@ -8,4 +8,9 @@ public class HamburguerTriplo extends Hamburguer implements Produtos{
     public void exibirNome() {
         System.out.print("Hamburguer triplo\n");
     }
+
+    @Override
+    public double getValor() {
+        return super.getValor();
+    }
 }

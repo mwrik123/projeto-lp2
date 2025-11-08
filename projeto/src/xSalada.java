@@ -29,4 +29,9 @@ public class xSalada implements Produtos {
     public void exibirNome() {
         System.out.print("X salada\n");
     }
+
+    @Override
+    public double getValor() {
+        return preco;
+    }
 }

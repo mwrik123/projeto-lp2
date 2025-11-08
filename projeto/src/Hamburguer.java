@@ -41,6 +41,11 @@ public class Hamburguer implements Produtos{
         System.out.print("Hamburguer Simples\n");
     }
 
+    @Override
+    public double getValor() {
+        return preco;
+    }
+
     void novoPreco (int i){
         if(i == 2){
             Hamburguer.preco = 20.0;
@@ -49,4 +54,5 @@ public class Hamburguer implements Produtos{
             Hamburguer.preco = 25.0;
         }
     }
+
 }

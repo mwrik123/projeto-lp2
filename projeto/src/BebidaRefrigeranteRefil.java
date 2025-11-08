@@ -17,4 +17,9 @@ public class BebidaRefrigeranteRefil implements Produtos {
     public void exibirNome() {
         System.out.print("Refrigerante refil\nTipo:"+sabor+"\n");
     }
+
+    @Override
+    public double getValor() {
+        return preco;
+    }
 }
