@@ -15,7 +15,7 @@ public class Main {
 
         //descomente para rodar um teste que cria todos os produtos antes de iniciar o programa
         //e remove todos seus ingredientes e exibe o resultado
-        testeRemoverProdutos();        
+        //testeRemoverProdutos();        
 
         while (true){
             System.out.print("===== Bem-vindo(a)! =====\n");
