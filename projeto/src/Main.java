@@ -13,6 +13,10 @@ public class Main {
         //e exibe seus ingredientes
         //testeCriarProdutos();        
 
+        //descomente para rodar um teste que cria todos os produtos antes de iniciar o programa
+        //e remove todos seus ingredientes e exibe o resultado
+        testeRemoverProdutos();        
+
         while (true){
             System.out.print("===== Bem-vindo(a)! =====\n");
             System.out.print("[1] Cadastrar pedido\n[2] Entregar pedido\n[3] Pedidos pendentes\n[4] Verificar saldo do caixa\n[5] Fechar o caixa\n");
@@ -494,7 +498,7 @@ public class Main {
                     //remove pedido da lista de pedidos pendentes e add saldo ao caixa
                 case 3:
                     System.out.print("Pedidos pendentes:\n");
-                    caixa.exibePedidos();
+                    caixa.exibePedidosTeste();
                     break;
                     //exibe tabela com pedidos pendentes
                 case 4:
@@ -553,6 +557,262 @@ public class Main {
         System.out.print("\nDigite qualquer coisa para prosseguir\n");
         sc.nextLine();
 
+    }
+    static void testeRemoverProdutos(){
+
+        Caixa caixaTeste = new Caixa();
+        ArrayList <Produtos> PedidoTeste = new ArrayList<>();
+
+        Hamburguer hamburguer1 = new Hamburguer(1);
+        Hamburguer hamburguer2 = new Hamburguer(2);
+        HamburguerDuplo hamburguerduplo1 = new HamburguerDuplo(1);        
+        HamburguerDuplo hamburguerduplo2 = new HamburguerDuplo(1);
+        HamburguerTriplo hamburguertriplo = new HamburguerTriplo();
+        CrocSimples crocsimples = new CrocSimples();
+        CrocParmegiana crocparmegiana = new CrocParmegiana();
+        CrocAmericano crocamericano = new CrocAmericano();
+        xSalada xsalada = new xSalada();
+        XeggBaconBurguer xbb = new XeggBaconBurguer();
+        BurguerAmericano burgueramericano = new BurguerAmericano();
+        BurguerAmericanoDuplo burgueramericanoduplo = new BurguerAmericanoDuplo();
+        BurguerAmericanoTriplo burgueramericanotriplo = new BurguerAmericanoTriplo();
+
+        for(int opc1 = 1; opc1 < 20; opc1++) {
+                //hamburguer simples de frango
+                // System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer\n[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Frango\n[8] Pronto\n");
+                while(true) {
+                    if(opc1 < 1 || opc1 > 8) {
+                        //
+                        break;
+                    }
+                    if(opc1 == 8) {
+                        break;
+                    } else if(opc1 == 7) {
+                        hamburguer1.remove(Ingredientes.values()[opc1]);
+                    } else {
+                        hamburguer1.remove(Ingredientes.values()[opc1 - 1]);
+                    }
+                    break;
+                }
+                //hamburguer simples de carne
+                /*// System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer\n" +
+                        "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n [7] Carne\n[8] Pronto\n");*/
+                while(true) {
+                    if(opc1 < 1 || opc1 > 8) {
+                        break;
+                    }
+                    if(opc1 == 8) {
+                        break;
+                    } else {
+                        hamburguer2.remove(Ingredientes.values()[opc1 - 1]);
+                    }
+                    break;
+                }
+                //hamburguer duplo de frango
+                /*// System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
+                    "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Frango\n[8] Salsicha\n[9] Hamburguer 2\n[10] Pronto\n");*/
+                while(true) {
+                    if(opc1 < 1 || opc1 > 10) {
+                        break;
+                    }
+                    if(opc1 == 10) {
+                        break;
+                    } else if(opc1 == 7 || opc1 == 8 || opc1 == 9) {
+                        hamburguerduplo1.remove(Ingredientes.values()[opc1]);
+                    } else {
+                        hamburguerduplo1.remove(Ingredientes.values()[opc1 - 1]);
+                    }
+                    break;
+                }
+                //hamburguer duplo de carne
+                /*
+                        // System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
+                                "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Carne\n[8] Salsicha\n[9] Hamburguer 2\n[10] Pronto\n");
+                */
+                while(true) {
+                    if(opc1 < 1 || opc1 > 10) {
+                        break;
+                    }
+                    if(opc1 == 10) {
+                        break;
+                    } else if(opc1 == 8 || opc1 == 9) {
+                        hamburguerduplo2.remove(Ingredientes.values()[opc1]);
+                    } else {
+                        hamburguerduplo2.remove(Ingredientes.values()[opc1 - 1]);
+                    }
+                    break;
+                }
+                //hamburguer triplo
+                /*
+                // System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
+                        "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Carne\n[8] Frango\n" +
+                        "[9] Salsicha\n[10] Hamburguer 2\n [11] Hamburguer 3\n[12] Salada 2\n [13] Pronto\n");
+                */
+                while(true) {
+                    if(opc1 < 1 || opc1 > 13) {
+                        break;
+                    }
+                    if(opc1 == 13) {
+                        break;
+                    } else {
+                        hamburguertriplo.remove(Ingredientes.values()[opc1 - 1]);
+                    }
+                    break;
+                }
+                //Croc simples
+                /*
+                                // System.out.print("Qual ingrediente deseja remover?\n[1] Pão\n[2]Frango Empanado\n" +
+                                        "[3] Salada\n[4] Maionese\n[5] Queijo\n[6] Pronto\n");
+                */
+                while(true) {
+                    if(opc1 < 1 || opc1 > 6) {
+                        break;
+                    }
+                    if(opc1 == 6) {
+                        break;
+                    } else {
+                        crocsimples.remove(IngredientesCroc.values()[opc1 - 1]);
+                    }
+                    break;
+                }
+                //croc parmegiana
+                // System.out.print("Qual ingrediente deseja remover?\n[1] Pão\n" +
+                //            "[2] Frango empanado\n[3] Salada\n[4] Maionese\n[5] Queijo\n[6] Molho de tomate\n[7] Tomate (adicional)\n[8] Pronto");
+    
+                while(true) {
+                    if(opc1 < 1 || opc1 > 8) {
+                        break;
+                    }
+                    //remocao
+                    if(opc1 == 8) {
+                        break;
+                    } else {
+                        crocparmegiana.remove(IngredientesCroc.values()[opc1 - 1]);
+                    }
+                    break;
+                }
+                //Croc americano
+                // System.out.print("Qual ingrediente deseja remover?\n[1] Pão\n[2] Frango Empanado\n" +
+                //        "[3] Salada\n[4] Maionese\n[5] Queijo\n[6] Salada americana\n[7] Cebola\n[8] Molho defumado\n[9] Pronto\n");
+                while(true) {
+                    if(opc1 < 1 || opc1 > 9) {
+                        break;
+                    }
+                    //remocao
+                    if(opc1 == 9) {
+                        break;
+                    } else if(opc1 == 6 || opc1 == 7 || opc1 == 8) {
+                        crocamericano.remove(IngredientesCroc.values()[opc1 + 1]);
+                    } else {
+                        crocamericano.remove(IngredientesCroc.values()[opc1 - 1]);
+                    }
+                    break;
+                }
+                //X salada
+                // System.out.print("Qual ingrediente deseja remover?\n");
+                // System.out.print("[1] Pão\n[2] Hamburguer\n[3] Queijo Mussarela\n[4] Tomate\n[5] Alface\n[6] Maionese\n [7] Pronto\n");
+                while(true) {
+                    if(opc1 < 1 || opc1 > 7) {
+                        break;
+                    }
+                    //remocao
+                    if(opc1 == 7) {
+                        break;
+                    } else {
+                        xsalada.remove(IngredientesXSalada.values()[opc1 - 1]);
+                        // System.out.print("Ingrediente removido.\n");
+                    }
+                    break;
+                }
+                //X egg Bacon burguer
+                // System.out.print("Qual ingrediente deseja remover?\n[1] Hamburguer\n" +
+                //        "[2] Cheddar\n[3] Ovo\n[4] Bacon\n[5] Maionese\n[6] Pão\n[7] Pronto");
+                while(true) {
+                    if(opc1 < 1 || opc1 > 7) {
+                        break;
+                    }
+                    //remocao
+                    if(opc1 == 7) {
+                        break;
+                    } else {
+                        xbb.remove(IngredientesXBB.values()[opc1 - 1]);
+                    }
+                    break;
+                }
+                //Americano simples
+                // System.out.print("Qual ingrediente deseja remover?\n[1] Pão\n[2] Hamburguer\n" +
+                //        "[3] Salada Americana\n[4] Cebola Picada\n[5] Molho Defumado\n[6] Maionese\n[7] Pronto\n");
+                while(true) {
+                    if(opc1 < 1 || opc1 > 7) {
+                        break;
+                    }
+                    //remocao
+                    if(opc1 == 7) {
+                        break;
+                    } else {
+                        burgueramericano.remove(IngredientesBurguerAmericano.values()[opc1 - 1]);
+                        // System.out.print("Ingrediente removido.\n");
+                    }
+                    break;
+                }
+                //americano duplo
+                // System.out.print("Qual ingrediente deseja remover?\n[1] Pão\n[2] Hamburguer\n" +
+                //        "[3] Salada Americana\n[4] Cebola Picada\n[5] Molho Defumado\n[6] Maionese\n[7] Hamburguer 2\n[8] Pronto\n");
+                while(true) {
+                    if(opc1 < 1 || opc1 > 8) {
+                        break;
+                    }
+                    //remocao
+                    if(opc1 == 8) {
+                        break;
+                    } else {
+                        burgueramericanoduplo.remove(IngredientesBurguerAmericano.values()[opc1 - 1]);
+                        // System.out.print("Ingrediente removido.\n");
+                    }
+                    break;
+                }
+                //americano triplo
+                // System.out.print("Qual ingrediente deseja remover?\n[1] Pão\n[2] Hamburguer\n" +
+                //        "[3] Salada Americana\n[4] Cebola Picada\n[5] Molho Defumado\n[6] Maionese\n" +
+                //        "[7] Hamburguer 2\n[8] Hamburguer 3\n[9] Pronto\n");
+                while(true) {
+                    if(opc1 < 1 || opc1 > 9) {
+                        break;
+                    }
+                    //remocao
+                    if(opc1 == 9) {
+                        break;
+                    } else {
+                        burgueramericanotriplo.remove(IngredientesBurguerAmericano.values()[opc1 - 1]);
+                        // System.out.print("Ingrediente removido.\n");
+                    }
+                    break;
+                }    
+            //loop            
+        }
+
+        PedidoTeste.add(hamburguer1);
+        PedidoTeste.add(hamburguer2);
+        PedidoTeste.add(hamburguerduplo1);
+        PedidoTeste.add(hamburguerduplo2);
+        PedidoTeste.add(hamburguertriplo);
+        PedidoTeste.add(crocsimples);
+        PedidoTeste.add(crocparmegiana);
+        PedidoTeste.add(crocamericano);
+        PedidoTeste.add(xsalada);
+        PedidoTeste.add(xbb);
+        PedidoTeste.add(burgueramericano);
+        PedidoTeste.add(burgueramericanoduplo);
+        PedidoTeste.add(burgueramericanotriplo);
+
+        Pedido PedidoComNada = new Pedido(1, "ian", PedidoTeste);
+
+        caixaTeste.pedidos.add(PedidoComNada);
+        caixaTeste.exibePedidosTeste();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("\nDigite qualquer coisa para prosseguir\n");
+        sc.nextLine();
     }
     static void montaHambSimp(ArrayList<Produtos> produtos, int i){
         Scanner sc = new Scanner(System.in);
@@ -932,7 +1192,7 @@ public class Main {
                     }
                 }
 
-                if (opc1 == 7) {
+                if (opc1 == 8) {
                     break;
                 } else {
                     parmegiana.remove(IngredientesCroc.values()[opc1 - 1]);
