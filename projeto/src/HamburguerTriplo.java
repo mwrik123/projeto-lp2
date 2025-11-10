@@ -1,8 +1,6 @@
 public class HamburguerTriplo extends Hamburguer implements Produtos{
     HamburguerTriplo(){
-        super();
-        ingredientes.add(Ingredientes.values()[10]); //novo
-        ingredientes.add(Ingredientes.values()[11]); //novo
+        super(); //já insere todos os ingredientes
         novoPreco(3);
     }
 

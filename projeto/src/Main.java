@@ -6,16 +6,34 @@ import java.util.InputMismatchException;
 
 public class Main {
     public static void main(String[] args){
+
+        /* ===================================================================================================
+        *      -TESTE REMOVER PRODUTOS: executa teste que cria todos os produtos antes de iniciar o programa *
+        *       e exibe seus ingredientes                                                                    *
+        *      -TESTE CRIAR PRODUTOS: teste que cria todos os produtos antes de iniciar o programa           *
+        *        e remove todos seus ingredientes e exibe o resultado                                        *
+        * ================================================================================================== * 
+        *           <<<<VARIÁVEIS PARA CONFIGURAÇÃO DE TESTES (0 = não executa; 1 = executa)>>>>             *
+        =================================================================================================== */
+        /**/                                                                                              /**/
+        /**/    int rodarTesteCriarProdutos = 0;                                                          /**/
+        /**/    int rodarTesteRemoverProdutos = 0;                                                        /**/
+        /**/                                                                                              /**/
+        /* ================================================================================================= */
+
+        //roda testes antes de executar main, se selecionado
+        if(rodarTesteCriarProdutos == 1){
+            testeCriarProdutos();        
+        }
+
+        //roda testes antes de executar main, se selecionado
+        if(rodarTesteRemoverProdutos == 1){
+            testeRemoverProdutos();
+        }        
+
+        //main
         Caixa caixa = new Caixa();
-        int id = 0;
-
-        //descomente para rodar um teste que cria todos os produtos antes de iniciar o programa
-        //e exibe seus ingredientes
-        //testeCriarProdutos();        
-
-        //descomente para rodar um teste que cria todos os produtos antes de iniciar o programa
-        //e remove todos seus ingredientes e exibe o resultado
-        //testeRemoverProdutos();        
+        int id = 0;        
 
         while (true){
             System.out.print("===== Bem-vindo(a)! =====\n");
@@ -519,6 +537,11 @@ public class Main {
     }
     static void testeCriarProdutos(){
 
+        Scanner sc = new Scanner(System.in);
+        System.out.print("\n === Executando teste Criar Produtos === \n");
+        System.out.print("\nDigite qualquer coisa para prosseguir.\n");
+        sc.nextLine();  
+
         Caixa caixaTeste = new Caixa();
         ArrayList <Produtos> PedidoTeste = new ArrayList<>();
 
@@ -553,12 +576,16 @@ public class Main {
         caixaTeste.pedidos.add(PedidoComTudo);
         caixaTeste.exibePedidosTeste();
 
-        Scanner sc = new Scanner(System.in);
-        System.out.print("\nDigite qualquer coisa para prosseguir\n");
+        System.out.print("\nTeste finalizado\nDigite qualquer coisa para prosseguir\n");
         sc.nextLine();
 
     }
     static void testeRemoverProdutos(){
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("\n === Executando teste Remover Produtos === \n");
+        System.out.print("\nDigite qualquer coisa para prosseguir.\n");
+        sc.nextLine();       
 
         Caixa caixaTeste = new Caixa();
         ArrayList <Produtos> PedidoTeste = new ArrayList<>();
@@ -566,7 +593,7 @@ public class Main {
         Hamburguer hamburguer1 = new Hamburguer(1);
         Hamburguer hamburguer2 = new Hamburguer(2);
         HamburguerDuplo hamburguerduplo1 = new HamburguerDuplo(1);        
-        HamburguerDuplo hamburguerduplo2 = new HamburguerDuplo(1);
+        HamburguerDuplo hamburguerduplo2 = new HamburguerDuplo(2);
         HamburguerTriplo hamburguertriplo = new HamburguerTriplo();
         CrocSimples crocsimples = new CrocSimples();
         CrocParmegiana crocparmegiana = new CrocParmegiana();
@@ -809,9 +836,8 @@ public class Main {
 
         caixaTeste.pedidos.add(PedidoComNada);
         caixaTeste.exibePedidosTeste();
-
-        Scanner sc = new Scanner(System.in);
-        System.out.print("\nDigite qualquer coisa para prosseguir\n");
+        
+        System.out.print("\nTeste finalizado\nDigite qualquer coisa para prosseguir\n");
         sc.nextLine();
     }
     static void montaHambSimp(ArrayList<Produtos> produtos, int i){
