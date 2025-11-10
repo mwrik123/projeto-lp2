@@ -4,5 +4,7 @@ public enum IngredientesBurguerAmericano {
     SALADA_AMERICANA,
     CEBOLA_PICADA,
     MOLHO_DEFUMADO,
-    MAIONESE
+    MAIONESE,
+    HAMBURGUER_2,
+    HAMBURGUER_3
 }

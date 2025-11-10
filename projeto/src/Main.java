@@ -8,9 +8,14 @@ public class Main {
     public static void main(String[] args){
         Caixa caixa = new Caixa();
         int id = 0;
+
+        //descomente para rodar um teste que cria todos os produtos antes de iniciar o programa
+        //e exibe seus ingredientes
+        //testeCriarProdutos();        
+
         while (true){
             System.out.print("===== Bem-vindo(a)! =====\n");
-            System.out.print("[1] Cadastrar pedido\n[2] Entregar pedido\n[3] Pedidos pendentes\n[4] Verificar saldo do caixa\n[5] Feixar o caixa\n");
+            System.out.print("[1] Cadastrar pedido\n[2] Entregar pedido\n[3] Pedidos pendentes\n[4] Verificar saldo do caixa\n[5] Fechar o caixa\n");
             Scanner sc = new Scanner(System.in);
 
             int opc;
@@ -506,7 +511,48 @@ public class Main {
             if(opc == 5){
                 break;
             }
-        }
+        } 
+    }
+    static void testeCriarProdutos(){
+
+        Caixa caixaTeste = new Caixa();
+        ArrayList <Produtos> PedidoTeste = new ArrayList<>();
+
+        PedidoTeste.add(new Hamburguer(1));
+        PedidoTeste.add(new Hamburguer(2));
+        PedidoTeste.add(new HamburguerDuplo(1));
+        PedidoTeste.add(new HamburguerDuplo(2));
+        PedidoTeste.add(new HamburguerTriplo());
+        PedidoTeste.add(new CrocSimples());
+        PedidoTeste.add(new CrocParmegiana());
+        PedidoTeste.add(new CrocAmericano());
+        PedidoTeste.add(new xSalada());
+        PedidoTeste.add(new XeggBaconBurguer());
+        PedidoTeste.add(new BurguerAmericano());
+        PedidoTeste.add(new BurguerAmericanoDuplo());
+        PedidoTeste.add(new BurguerAmericanoTriplo());
+        PedidoTeste.add(new Sorvete(SorveteSabor.CHOCOLATE));
+        PedidoTeste.add(new Sorvete(SorveteSabor.CREME));
+        PedidoTeste.add(new Sorvete(SorveteSabor.MISTO));
+        PedidoTeste.add(new BatataFrita());
+        PedidoTeste.add(new FileFrangoEmpanado());
+        PedidoTeste.add(new Agua(Aguas.SABORIZADA_LIMAO,1));
+        PedidoTeste.add(new Agua(Aguas.MINERAL,2));
+        PedidoTeste.add(new Agua(Aguas.COM_GAS,3));
+        PedidoTeste.add(new BebidaRefrigeranteLata(RefriSabores.FANTA_UVA));
+        PedidoTeste.add(new BebidaRefrigeranteRefil(RefriSabores.PEPSI));
+        PedidoTeste.add(new ChaGelado(ChaSabor.PESSEGO));
+        PedidoTeste.add(new Suco(Sucos.DELL_LARANJA));
+
+        Pedido PedidoComTudo = new Pedido(1, "ian", PedidoTeste);
+
+        caixaTeste.pedidos.add(PedidoComTudo);
+        caixaTeste.exibePedidosTeste();
+
+        Scanner sc = new Scanner(System.in);
+        System.out.print("\nDigite qualquer coisa para prosseguir\n");
+        sc.nextLine();
+
     }
     static void montaHambSimp(ArrayList<Produtos> produtos, int i){
         Scanner sc = new Scanner(System.in);
@@ -983,7 +1029,7 @@ public class Main {
             while (true) {
 
                 System.out.print("Qual ingrediente deseja remover?\n");
-                System.out.print("[1] Pão\n[2] Hamburguer\n[3] Queijo Mussarela\n[4] Tomate\n[5] Maionese\n[6] Alface\n [7] Pronto\n");
+                System.out.print("[1] Pão\n[2] Hamburguer\n[3] Queijo Mussarela\n[4] Tomate\n[5] Alface\n[6] Maionese\n [7] Pronto\n");
 
                 while (true) {
                     try {

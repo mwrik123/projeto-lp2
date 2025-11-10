@@ -17,7 +17,7 @@ public class XeggBaconBurguer implements Produtos{
     @Override
     public void imprime() {
         for(int i = 0; i < ingredientes.size(); i++){
-            System.out.print(ingredientes.get(i));
+            System.out.print(ingredientes.get(i) + "\n");
         }
         System.out.print("Preço: "+preco+"\n");
     }
