@@ -462,7 +462,7 @@ public class Main {
                             try {
                                 opc2 = sc.nextInt();
 
-                                if (opc2 < 1 || opc2 > caixa.pedidos.size() - 1) {
+                                if (opc2 < 1) {
                                     System.out.print("Opção inválida/Pedido inexistente\n");
                                     continue;
                                 }
@@ -501,6 +501,7 @@ public class Main {
                     System.out.print("Valor final: "+caixa.getValorTotal()+"\n");
                     System.out.print("Fechamento concluído!");
                     break;
+                    //fecha o caixa
             }
             if(opc == 5){
                 break;
