@@ -1,2 +1,2 @@
 ## Diagrama UML
-![diagrama UML](UML.png)
+![diagrama UML](img/UML.png)
