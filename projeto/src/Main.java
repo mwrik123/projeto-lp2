@@ -1,11 +1,12 @@
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 import java.util.InputMismatchException;
 
 
 public class Main {
-    public static void main(String[] args){
+    public static void main(String[] args) throws ListaPendenteException, ListaVaziaException {
 
         /* ===================================================================================================
         *      -TESTE REMOVER PRODUTOS: executa teste que cria todos os produtos antes de iniciar o programa *
@@ -34,10 +35,10 @@ public class Main {
         //main
         Caixa caixa = new Caixa();
         int id = 0;        
-
+        int vaifechar = 0;
         while (true){
-            System.out.print("===== Bem-vindo(a)! =====\n");
-            System.out.print("[1] Cadastrar pedido\n[2] Entregar pedido\n[3] Pedidos pendentes\n[4] Verificar saldo do caixa\n[5] Fechar o caixa\n");
+            System.out.print("\n===== Bem-vindo(a)! =====\n");
+            System.out.print("[1] Cadastrar pedido\n[2] Entregar pedido\n[3] Pedidos pendentes\n[4] Verificar saldo do caixa\n[5] Fechar o caixa\n=========================\n");
             Scanner sc = new Scanner(System.in);
 
             int opc;
@@ -66,17 +67,21 @@ public class Main {
                 case 1:
                     ArrayList <Produtos> produtosPedidoAtual = new ArrayList<>();
                     id++;
-                    System.out.print("Nome do pedido:\n");
+                    System.out.print("\n=========================\nNome do pedido(n para cancelar):\n=========================\n");
                     String nome = sc.next();
+                    if(Objects.equals(nome, "n")){
+                      break;
+                    }
 
-                    System.out.print("Adicione produtos ao carrinho:\n");
+                    System.out.print("\n=========================\nAdicione produtos ao carrinho:\n=========================\n");
                     while(true){
                         System.out.print("[1] Hamburguer (simples/ duplo/ triplo)\n[2] Croc (simples/ parmegiana/ americano)\n" +
                                 "[3] X-salada\n[4] X-egg bacon burguer\n[5] Burguer americano(simples/ duplo/ triplo)\n[6]Box-combo\n" +
-                                "[7] Sorvete (chocolate/ misto/ creme)\n[8] Porções (Batata/ Filé de frango empanado)\n[9] Bebida\n[10] Sair\n");
+                                "[7] Sorvete (chocolate/ misto/ creme)\n[8] Porções (Batata/ Filé de frango empanado)\n[9] Bebida\n[10] Sair\n=========================\n");
 
                         while (true){
                             try{
+                                System.out.print("Opção: ");
                                 opc2 = sc.nextInt();
                                 if(opc2 < 1 || opc2 > 10){
                                     System.out.print("Opção inválida\n");
@@ -94,13 +99,13 @@ public class Main {
                         }
                         switch (opc2){
                             case 1://hamburguer
-                                System.out.print("[1] Simples\n[2] Duplo\n[3] Triplo\n");
+                                System.out.print("\n=========================\n[1] Simples\n[2] Duplo\n[3] Triplo\n[4] Cancelar\n=========================\n");
 
                                 while(true){
                                     try{
                                         opc3 = sc.nextInt();
 
-                                        if(opc3 < 1 || opc3 > 3){
+                                        if(opc3 < 1 || opc3 > 4){
                                             System.out.print("Opção inválida\n");
                                             continue;
                                         }
@@ -110,18 +115,21 @@ public class Main {
                                         sc.nextLine();
                                     }
                                 }
-
+                                if(opc3 == 4){
+                                    break;
+                                }
                                 simpDuplTrip(produtosPedidoAtual, opc3);
                                 break;
                             case 2://Croc
 
-                                System.out.print("[1] Simples\n[2] Parmegiana\n[3] Americano\n");
+                                System.out.print("\n=========================\n[1] Simples\n[2] Parmegiana\n[3] Americano\n[4] Cancelar\n=========================\n");
 
                                 while(true){
                                     try{
+                                        System.out.print("Opção: ");
                                         opc3 = sc.nextInt();
 
-                                        if(opc3 < 1 || opc3 > 3){
+                                        if(opc3 < 1 || opc3 > 4){
                                             System.out.print("Opção inválida\n");
                                             continue;
                                         }
@@ -131,7 +139,9 @@ public class Main {
                                         sc.nextLine();
                                     }
                                 }
-
+                                if(opc3 == 4){
+                                    break;
+                                }
                                 simpParmAmer(produtosPedidoAtual, opc3);
                                 break;
                             case 3: //X-Salada
@@ -142,13 +152,14 @@ public class Main {
                                 break;
                             case 5://Burguer Americano
 
-                                System.out.print("[1] Simples\n[2] Duplo\n[3] Triplo\n");
+                                System.out.print("\n=========================\n[1] Simples\n[2] Duplo\n[3] Triplo\n[4] Cancelar\n=========================\n");
 
                                 while(true){
                                     try{
+                                        System.out.print("Opção: ");
                                         opc3 = sc.nextInt();
 
-                                        if(opc3 < 1 || opc3 > 3){
+                                        if(opc3 < 1 || opc3 > 4){
                                             System.out.print("Opção inválida\n");
                                             continue;
                                         }
@@ -158,20 +169,23 @@ public class Main {
                                         sc.nextLine();
                                     }
                                 }
-
+                                if(opc3 == 4){
+                                    break;
+                                }
                                 burSimpDuplTrip(produtosPedidoAtual, opc3);
                                 break;
                             case 6:
                                 //Box Combo
                                 ArrayList<Produtos> box = new ArrayList<>();
                                 
-                                System.out.print("Hamburguer 1:\n[1] Hamburguer (simples/ duplo/ triplo)\n[2] Croc (simples/ parmegiana/ americano)\n"
-                                                +"\n[3] X-salada\n[4] X-egg bacon burguer\n[5] Burguer americano (simples/ duplo/ triplo)\n[6] Vazio\n");
+                                System.out.print("\n=========================\nHamburguer 1:\n[1] Hamburguer (simples/ duplo/ triplo)\n[2] Croc (simples/ parmegiana/ americano)\n"
+                                                +"\n[3] X-salada\n[4] X-egg bacon burguer\n[5] Burguer americano (simples/ duplo/ triplo)\n[6] Vazio\n[7] Cancelar Pedido\n=========================\n");
 
                                 while (true) {
                                     try {
+                                        System.out.print("Opção: ");
                                         opc3 = sc.nextInt();
-                                        if (opc3 < 1 || opc3 > 6) {
+                                        if (opc3 < 1 || opc3 > 7) {
                                             System.out.print("Opção inválida\n");
                                             continue;
                                         }
@@ -181,14 +195,18 @@ public class Main {
                                         sc.nextLine();
                                     }
                                 }
+                                if(opc3 == 7){
+                                    break;
+                                }
                                 
                                 if(opc3 == 1){
-                                    System.out.print("[1] Simples\n[2] Duplo\n[3] Triplo\n");
+                                    System.out.print("\n=========================\n[1] Simples\n[2] Duplo\n[3] Triplo\n[4] Cancelar Pedido\n=========================\n");
                                     
                                     while (true) {
                                         try {
+                                            System.out.print("Opção: ");
                                             opc4 = sc.nextInt();
-                                            if (opc4 < 1 || opc4 > 3) {
+                                            if (opc4 < 1 || opc4 > 4) {
                                                 System.out.print("Opção inválida\n");
                                                 continue;
                                             }
@@ -198,15 +216,18 @@ public class Main {
                                             sc.nextLine();
                                         }
                                     }
-                                    
+                                    if(opc4 == 4){
+                                        break;
+                                    }
                                     simpDuplTrip(box, opc4);
                                 } else if(opc3 == 2) {
-                                    System.out.print("[1] Simples\n[2] Parmegiana\n[3] Americano\n");
+                                    System.out.print("\n=========================\n1] Simples\n[2] Parmegiana\n[3] Americano\n[4] Cancelar pedido\n=========================\n");
 
                                     while (true) {
                                         try {
+                                            System.out.print("Opção: ");
                                             opc4 = sc.nextInt();
-                                            if (opc4 < 1 || opc4 > 3) {
+                                            if (opc4 < 1 || opc4 > 4) {
                                                 System.out.print("Opção inválida\n");
                                                 continue;
                                             }
@@ -216,19 +237,22 @@ public class Main {
                                             sc.nextLine();
                                         }
                                     }
-
+                                    if(opc4 == 4){
+                                        break;
+                                    }
                                     simpParmAmer(box, opc4);
                                 } else if(opc3 == 3){
                                     montaXsalada(box);
                                 } else if (opc3 == 4){
                                     montaXegg(box);
                                 } else if (opc3 == 5){
-                                    System.out.print("[1] Simples\n[2] Duplo\n[3] Triplo\n");
+                                    System.out.print("\n=========================\n[1] Simples\n[2] Duplo\n[3] Triplo\n[4] Cancelar Pedido\n=========================\n");
 
                                     while (true) {
                                         try {
+                                            System.out.print("Opção: ");
                                             opc4 = sc.nextInt();
-                                            if (opc4 < 1 || opc4 > 3) {
+                                            if (opc4 < 1 || opc4 > 4) {
                                                 System.out.print("Opção inválida\n");
                                                 continue;
                                             }
@@ -238,19 +262,22 @@ public class Main {
                                             sc.nextLine();
                                         }
                                     }
-
+                                    if(opc4 == 4){
+                                        break;
+                                    }
                                     burSimpDuplTrip(box, opc4);
                                 } else {
                                    System.out.print("Sem hamburguer 1\n");
                                 }
                                 //hamburguer 2
-                                System.out.print("Hamburguer 2:\n[1] Hamburguer (simples/ duplo/ triplo)\n[2] Croc (simples/ parmegiana/ americano)\n"
-                                        +"\n[3] X-salada\n[4] X-egg bacon burguer\n[5] Burguer americano (simples/ duplo/ triplo)\n[6] Vazio\n");
+                                System.out.print("\n=========================\nHamburguer 2:\n[1] Hamburguer (simples/ duplo/ triplo)\n[2] Croc (simples/ parmegiana/ americano)\n"
+                                        +"\n[3] X-salada\n[4] X-egg bacon burguer\n[5] Burguer americano (simples/ duplo/ triplo)\n[6] Vazio\n[7] Cancelar Pedido\n=========================\n");
 
                                 while (true) {
                                     try {
+                                        System.out.print("Opção: ");
                                         opc3 = sc.nextInt();
-                                        if (opc3 < 1 || opc3 > 6) {
+                                        if (opc3 < 1 || opc3 > 7) {
                                             System.out.print("Opção inválida\n");
                                             continue;
                                         }
@@ -260,14 +287,18 @@ public class Main {
                                         sc.nextLine();
                                     }
                                 }
+                                if(opc3 == 7){
+                                    break;
+                                }
 
                                 if(opc3 == 1){
-                                    System.out.print("[1] Simples\n[2] Duplo\n[3] Triplo\n");
+                                    System.out.print("\n=========================\n[1] Simples\n[2] Duplo\n[3] Triplo\n[4] Cancelar=========================\n");
 
                                     while (true) {
                                         try {
+                                            System.out.print("Opção: ");
                                             opc4 = sc.nextInt();
-                                            if (opc4 < 1 || opc4 > 3) {
+                                            if (opc4 < 1 || opc4 > 4) {
                                                 System.out.print("Opção inválida\n");
                                                 continue;
                                             }
@@ -277,15 +308,18 @@ public class Main {
                                             sc.nextLine();
                                         }
                                     }
-
+                                    if(opc4 == 4){
+                                        break;
+                                    }
                                     simpDuplTrip(box, opc4);
                                 } else if(opc3 == 2) {
-                                    System.out.print("[1] Simples\n[2] Parmegiana\n[3] Americano\n");
+                                    System.out.print("\n=========================\n[1] Simples\n[2] Parmegiana\n[3] Americano\n[4] Cancelar Pedido\n=========================\n");
 
                                     while (true) {
                                         try {
+                                            System.out.print("Opção: ");
                                             opc4 = sc.nextInt();
-                                            if (opc4 < 1 || opc4 > 3) {
+                                            if (opc4 < 1 || opc4 > 4) {
                                                 System.out.print("Opção inválida\n");
                                                 continue;
                                             }
@@ -295,19 +329,22 @@ public class Main {
                                             sc.nextLine();
                                         }
                                     }
-
+                                    if(opc4 == 4){
+                                        break;
+                                    }
                                     simpParmAmer(box, opc4);
                                 } else if(opc3 == 3){
                                     montaXsalada(box);
                                 } else if (opc3 == 4){
                                     montaXegg(box);
                                 } else if (opc3 == 5){
-                                    System.out.print("[1] Simples\n[2] Duplo\n[3] Triplo\n");
+                                    System.out.print("\n=========================\n[1] Simples\n[2] Duplo\n[3] Triplo\n[4] Cancelr Pedido\n=========================\n");
 
                                     while (true) {
                                         try {
+                                            System.out.print("Opção: ");
                                             opc4 = sc.nextInt();
-                                            if (opc4 < 1 || opc4 > 3) {
+                                            if (opc4 < 1 || opc4 > 4) {
                                                 System.out.print("Opção inválida\n");
                                                 continue;
                                             }
@@ -317,7 +354,9 @@ public class Main {
                                             sc.nextLine();
                                         }
                                     }
-
+                                    if(opc4 == 4){
+                                        break;
+                                    }
                                     burSimpDuplTrip(box, opc4);
                                 } else {
                                     System.out.print("Sem hamburguer 2\n");
@@ -419,6 +458,13 @@ public class Main {
                                 //se lista de produtos estiver vazia, lançar execption e cancelar o box no pedido
                                 //se nao:
                                 Box boxtotal = new Box(box);
+                                try{
+                                    Verificador a = new Verificador();
+                                    a.verificaLista(box);
+                                }catch(ListaVaziaException e){
+                                    System.out.print(e.getMessage());
+                                    break;
+                                }
                                 produtosPedidoAtual.add(boxtotal);
                                 break;
                                 //implementa montagem do combo a partir do que da pra colocar
@@ -473,6 +519,13 @@ public class Main {
                                 break;
                         }
                     }
+                    try {
+                        Verificador e = new Verificador();
+                        e.verificaLista(produtosPedidoAtual);
+                    }catch (ListaVaziaException e){
+                        System.out.print(e.getMessage());
+                        break;
+                    }
                     Pedido pedidoatual = new Pedido(id, nome, produtosPedidoAtual);
                     caixa.pedidos.add(pedidoatual);
                     break;
@@ -525,12 +578,19 @@ public class Main {
                     //exibe saldo do caixa
                 case 5:
                     System.out.print("Preparando para fechamendo de caixa...\n");
+                    try{
+                        Verificador s = new Verificador();
+                        s.verificaPedidosPendentes(caixa.pedidos);
+                    } catch (ListaPendenteException s){
+                        System.out.print(s.getMessage());
+                        break;
+                    }
                     System.out.print("Valor final: "+caixa.getValorTotal()+"\n");
                     System.out.print("Fechamento concluído!");
+                    vaifechar = 1;
                     break;
-                    //fecha o caixa
             }
-            if(opc == 5){
+            if(vaifechar == 1){
                 break;
             }
         } 

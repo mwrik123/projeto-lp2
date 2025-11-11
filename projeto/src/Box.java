@@ -6,10 +6,11 @@ public class Box implements Produtos {
 
     //2 hambugueres, 2 bebidas, 1 sorvete, 1 petisco
     Box(ArrayList<Produtos> produtos){
-        produtos_box = new ArrayList<>();
-        produtos_box = produtos;
+            produtos_box = new ArrayList<>();
+            produtos_box = produtos;
 
-        preco = 70.0;
+            preco = 70.0;
+
     }
 
     @Override
