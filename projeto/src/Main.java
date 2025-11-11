@@ -66,7 +66,6 @@ public class Main {
             switch (opc){
                 case 1:
                     ArrayList <Produtos> produtosPedidoAtual = new ArrayList<>();
-                    id++;
                     System.out.print("\n=========================\nNome do pedido(n para cancelar): ");
                     String nome = sc.next();
                     if(Objects.equals(nome, "n")){
@@ -623,6 +622,7 @@ public class Main {
                         System.out.print(e.getMessage()+"\nPedido cancelado!\n=========================\n");
                         break;
                     }
+                    id++;
                     Pedido pedidoatual = new Pedido(id, nome, produtosPedidoAtual);
                     caixa.pedidos.add(pedidoatual);
                     break;
@@ -2196,6 +2196,7 @@ public class Main {
         return 1;
     }
 }
+
 
 
 
