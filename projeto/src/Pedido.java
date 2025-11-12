@@ -1,24 +1,44 @@
 import java.util.ArrayList;
 
 public class Pedido{
-    int id;
-    String nome;
-    ArrayList <Produtos> produtos;
-    double valorFinal;
+    private int id;
+    private String nome;
+    private ArrayList <Produtos> produtos;
+    private double valorFinal;
 
     Pedido(int id, String nome, ArrayList <Produtos> produtos){
         this.id = id;
         this.produtos = produtos;
         this.nome = nome;
-        valorFinal = calculaValorFinal();
+        setValorFinal(calculaValorFinal());
+    }
+
+    public void setValorFinal(double valorFinal) {
+        this.valorFinal = valorFinal;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public ArrayList<Produtos> getProdutos() {
+        return produtos;
+    }
+
+    public double getValorFinal() {
+        return valorFinal;
+    }
+
+    public int getId() {
+        return id;
     }
 
     double calculaValorFinal(){
-        valorFinal = 0.00;
+        double valor = 0.00;
         for(int i = 0; i < produtos.size(); i++){
-            valorFinal = valorFinal+produtos.get(i).getValor();
+            valor = valor+produtos.get(i).getPreco();
         }
-        return valorFinal;
+        return valor;
     }
 
 }

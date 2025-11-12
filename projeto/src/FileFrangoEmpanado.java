@@ -1,26 +1,29 @@
 public class FileFrangoEmpanado implements Produtos {
 
-    protected static double preco;
-    protected String nome;
+    private static double preco;
+    private String nome;
 
     FileFrangoEmpanado() {
-        nome = "Filé de Frango Empanado";
+        nome = "Filé de Frango Empanado\n";
         preco = 9.00;
     }
 
+    public String getNome(){
+        return nome;
+    }
     @Override
     public void imprime() {
-        System.out.print(nome + "\n");
-        System.out.print("Preço: " + preco + "\n");
+        exibirNome();
+        System.out.print("Preço: " + getPreco() + "\n");
     }
 
     @Override
     public void exibirNome() {
-        System.out.print(nome);
+        System.out.print(getNome());
     }
 
     @Override
-    public double getValor() {
+    public double getPreco() {
         return preco;
     }
 }

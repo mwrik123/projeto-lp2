@@ -1,16 +1,18 @@
 public class HamburguerTriplo extends Hamburguer implements Produtos{
     HamburguerTriplo(){
-        super(); //já insere todos os ingredientes
-        novoPreco(3);
+        super();
+        setPreco(25.00);
+        setIngredientesTriplo();
+        setNome("Hamburguer Triplo\n");
     }
 
     @Override
     public void exibirNome() {
-        System.out.print("Hamburguer triplo\n");
+        System.out.print(getNome());
     }
 
     @Override
-    public double getValor() {
-        return super.getValor();
+    public double getPreco() {
+        return super.getPreco();
     }
 }

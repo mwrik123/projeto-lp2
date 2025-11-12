@@ -2,36 +2,54 @@ import java.util.ArrayList;
 
 public class xSalada implements Produtos {
 
-    ArrayList <IngredientesXSalada> ingredientesXSalada;
-    protected static double preco;
+    private ArrayList <IngredientesXSalada> ingredientesXSalada;
+    private static double preco;
+    private String nome;
 
     xSalada(){
         ingredientesXSalada = new ArrayList<>();
         for(int i = 0; i < IngredientesXSalada.values().length; i++){
-            ingredientesXSalada.add(IngredientesXSalada.values()[i]);
+            getIngredientesXSalada().add(IngredientesXSalada.values()[i]);
         }
-        preco = 14.50;
+        setPreco(19.50);
+        setNome();
+    }
+    public void setPreco(double preco){
+        xSalada.preco = preco;
+    }
+
+    public void setNome() {
+        this.nome = "X salada\n";
+    }
+
+    public String getNome() {
+        return nome;
     }
 
     void remove(IngredientesXSalada ingrediente){
-        ingredientesXSalada.remove(ingrediente);
+        getIngredientesXSalada().remove(ingrediente);
     }
 
     @Override
     public void imprime() {
-        for (IngredientesXSalada ingrediente : ingredientesXSalada) {
+        exibirNome();
+        for (IngredientesXSalada ingrediente : getIngredientesXSalada()) {
             System.out.print(ingrediente + "\n");
         }
-        System.out.print("Preço: " + preco + "\n");
+        System.out.print("Preço: " + getPreco() + "\n");
+    }
+
+    public ArrayList<IngredientesXSalada> getIngredientesXSalada(){
+        return ingredientesXSalada;
     }
 
     @Override
     public void exibirNome() {
-        System.out.print("X salada\n");
+        System.out.print(getNome());
     }
 
     @Override
-    public double getValor() {
+    public double getPreco() {
         return preco;
     }
 }

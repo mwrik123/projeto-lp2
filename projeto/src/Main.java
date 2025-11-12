@@ -75,15 +75,28 @@ public class Main {
 
                     System.out.print("\n=========================\nAdicione produtos ao carrinho:\n");
                     while(true){
-                        System.out.print("\n=========================\n[1] Hamburguer (simples/ duplo/ triplo)\n[2] Croc (simples/ parmegiana/ americano)\n" +
-                                "[3] X-salada\n[4] X-egg bacon burguer\n[5] Burguer americano(simples/ duplo/ triplo)\n[6] Box-combo\n" +
-                                "[7] Sorvete (chocolate/ misto/ creme)\n[8] Porções (Batata/ Filé de frango empanado)\n[9] Bebida\n[10] Sair\n=========================\n");
+                        System.out.print("""
+                                
+                                =========================
+                                [1] Hamburguer (simples/ duplo/ triplo)
+                                [2] Croc (simples/ parmegiana/ americano)
+                                [3] X-salada
+                                [4] X-egg bacon burguer
+                                [5] Burguer americano(simples/ duplo/ triplo)
+                                [6] Box-combo
+                                [7] Sorvete (chocolate/ misto/ creme)
+                                [8] Porções (Batata/ Filé de frango empanado)
+                                [9] Bebida
+                                [10] Concluir
+                                [11] Cancelar pedido
+                                =========================
+                                """);
 
                         while (true){
                             try{
                                 System.out.print("Opção: ");
                                 opc2 = sc.nextInt();
-                                if(opc2 < 1 || opc2 > 10){
+                                if(opc2 < 1 || opc2 > 11){
                                     System.out.print("Opção inválida\n");
                                     continue;
                                 }
@@ -93,8 +106,13 @@ public class Main {
                                 sc.nextLine();
                             }
                         }
-
+                        if(opc2 == 11){
+                            produtosPedidoAtual.clear();
+                            System.out.print("\n=========================\nPedido cancelado!\n=========================\n");
+                            break;
+                        }
                         if(opc2 == 10){
+                            System.out.print("\n=========================\nPedido concluído! Aguarde a entrega...\n=========================\n");
                             break;
                         }
                         switch (opc2){
@@ -198,8 +216,19 @@ public class Main {
                                 //Box Combo
                                 ArrayList<Produtos> box = new ArrayList<>();
                                 
-                                System.out.print("\n=========================\nHamburguer 1:\n[1] Hamburguer (simples/ duplo/ triplo)\n[2] Croc (simples/ parmegiana/ americano)\n"
-                                                +"\n[3] X-salada\n[4] X-egg bacon burguer\n[5] Burguer americano (simples/ duplo/ triplo)\n[6] Vazio\n[7] Cancelar Pedido\n=========================\n");
+                                System.out.print("""
+                                        
+                                        =========================
+                                        Hamburguer 1:
+                                        [1] Hamburguer (simples/ duplo/ triplo)
+                                        [2] Croc (simples/ parmegiana/ americano)
+                                        [3] X-salada
+                                        [4] X-egg bacon burguer
+                                        [5] Burguer americano (simples/ duplo/ triplo)
+                                        [6] Vazio
+                                        [7] Cancelar Pedido
+                                        =========================
+                                        """);
 
                                 while (true) {
                                     try {
@@ -308,8 +337,20 @@ public class Main {
                                    System.out.print("Sem hamburguer 1\n");
                                 }
                                 //hamburguer 2
-                                System.out.print("\n=========================\nHamburguer 2:\n[1] Hamburguer (simples/ duplo/ triplo)\n[2] Croc (simples/ parmegiana/ americano)\n"
-                                        +"\n[3] X-salada\n[4] X-egg bacon burguer\n[5] Burguer americano (simples/ duplo/ triplo)\n[6] Vazio\n[7] Cancelar Pedido\n=========================\n");
+                                System.out.print("""
+                                        
+                                        =========================
+                                        Hamburguer 2:
+                                        [1] Hamburguer (simples/ duplo/ triplo)
+                                        [2] Croc (simples/ parmegiana/ americano)
+                                        
+                                        [3] X-salada
+                                        [4] X-egg bacon burguer
+                                        [5] Burguer americano (simples/ duplo/ triplo)
+                                        [6] Vazio
+                                        [7] Cancelar Pedido
+                                        =========================
+                                        """);
 
                                 while (true) {
                                     try {
@@ -420,8 +461,17 @@ public class Main {
                                 }
 
                                 //bebida 1
-                                System.out.print("\n=========================\n[1] Refrigerante (refil/lata)\n" +
-                                        "[2] Sucos (laranja/dell vale)\n[3] Chá gelado\n[4] Água (mineral/ com gás/ saborizada)\n[5] Vazio\n[6] Cancelar Pedido\n=========================\n");
+                                System.out.print("""
+                                        
+                                        =========================
+                                        [1] Refrigerante (refil/lata)
+                                        [2] Sucos (laranja/dell vale)
+                                        [3] Chá gelado
+                                        [4] Água (mineral/ com gás/ saborizada)
+                                        [5] Vazio
+                                        [6] Cancelar Pedido
+                                        =========================
+                                        """);
 
                                 while (true) {
                                     try {
@@ -453,8 +503,17 @@ public class Main {
 
                                 //bebida 2
 
-                                System.out.print("\n=========================\n[1] Refrigerante (refil/lata)\n[2] Sucos (laranja/dell vale)\n" +
-                                        "[3] Chá gelado\n[4] Água (mineral/ com gás/ saborizada)\n[5] Vazio\n[6] Cancelar pedido\n=========================\n");
+                                System.out.print("""
+                                        
+                                        =========================
+                                        [1] Refrigerante (refil/lata)
+                                        [2] Sucos (laranja/dell vale)
+                                        [3] Chá gelado
+                                        [4] Água (mineral/ com gás/ saborizada)
+                                        [5] Vazio
+                                        [6] Cancelar pedido
+                                        =========================
+                                        """);
 
                                 while (true) {
                                     try {
@@ -584,8 +643,16 @@ public class Main {
                                 batataFile(produtosPedidoAtual, opc3);
                                 break;
                             case 9://bebidas
-                                System.out.print("\n=========================\n[1] Refrigerante (refil/lata)\n[2] Sucos (laranja/dell vale)\n" +
-                                        "[3] Chá gelado\n[4] Água(mineral/ com gás/ saborizada)\n[5] Cancelar pedido\n=========================\n");
+                                System.out.print("""
+                                        
+                                        =========================
+                                        [1] Refrigerante (refil/lata)
+                                        [2] Sucos (laranja/dell vale)
+                                        [3] Chá gelado
+                                        [4] Água(mineral/ com gás/ saborizada)
+                                        [5] Cancelar pedido
+                                        =========================
+                                        """);
 
                                 while (true) {
                                     try {
@@ -624,11 +691,11 @@ public class Main {
                     }
                     id++;
                     Pedido pedidoatual = new Pedido(id, nome, produtosPedidoAtual);
-                    caixa.pedidos.add(pedidoatual);
+                    caixa.getPedidos().add(pedidoatual);
                     break;
                 case 2:
                     while(true){
-                        if(caixa.pedidos.isEmpty()){
+                        if(caixa.getPedidos().isEmpty()){
                             System.out.print("\n=========================\nLista de pedidos vazia, adicione um pedido!\n=========================\n");
                             break;
                         }
@@ -649,15 +716,15 @@ public class Main {
                             }
                         }
 
-                        if(caixa.pedidos.get(0).id < opc2){
-                            System.out.print("O pedido "+caixa.pedidos.get(0).id+" de "+caixa.pedidos.get(0).nome+" precisa ser entregue antes de pedidos posteriores\n");
+                        if(caixa.getPedidos().get(0).getId() < opc2){
+                            System.out.print("O pedido "+caixa.getPedidos().get(0).getId()+" de "+caixa.getPedidos().get(0).getNome()+" precisa ser entregue antes de pedidos posteriores\n");
                             break;
-                        } else if(caixa.pedidos.get(0).id > opc2){
+                        } else if(caixa.getPedidos().get(0).getId() > opc2){
                             System.out.print("O pedido de id "+opc2+" já foi entregue.\n");
                             break;
                         } else {
-                            caixa.addAoValorTotal(caixa.pedidos.get(0));
-                            caixa.pedidos.remove(0);
+                            caixa.addAoValorTotal(caixa.getPedidos().get(0));
+                            caixa.getPedidos().remove(0);
                             System.out.print("\n=========================\nPedido do ID: "+opc2+" foi entregue!\n=========================\n");
                             break;
                         }
@@ -678,7 +745,7 @@ public class Main {
                     System.out.print("\n=========================\nPreparando para fechamendo de caixa...\n");
                     try{
                         Verificador s = new Verificador();
-                        s.verificaPedidosPendentes(caixa.pedidos);
+                        s.verificaPedidosPendentes(caixa.getPedidos());
                     } catch (ListaPendenteException s){
                         System.out.print(s.getMessage()+"\n=========================\n");
                         break;
@@ -716,22 +783,22 @@ public class Main {
         PedidoTeste.add(new BurguerAmericano());
         PedidoTeste.add(new BurguerAmericanoDuplo());
         PedidoTeste.add(new BurguerAmericanoTriplo());
-        PedidoTeste.add(new Sorvete(SorveteSabor.CHOCOLATE));
-        PedidoTeste.add(new Sorvete(SorveteSabor.CREME));
-        PedidoTeste.add(new Sorvete(SorveteSabor.MISTO));
+        PedidoTeste.add(new Sorvete(1));
+        PedidoTeste.add(new Sorvete(2));
+        PedidoTeste.add(new Sorvete(3));
         PedidoTeste.add(new BatataFrita());
         PedidoTeste.add(new FileFrangoEmpanado());
-        PedidoTeste.add(new Agua(Aguas.SABORIZADA_LIMAO,1));
-        PedidoTeste.add(new Agua(Aguas.MINERAL,2));
-        PedidoTeste.add(new Agua(Aguas.COM_GAS,3));
-        PedidoTeste.add(new BebidaRefrigeranteLata(RefriSabores.FANTA_UVA));
-        PedidoTeste.add(new BebidaRefrigeranteRefil(RefriSabores.PEPSI));
-        PedidoTeste.add(new ChaGelado(ChaSabor.PESSEGO));
-        PedidoTeste.add(new Suco(Sucos.DELL_LARANJA));
+        PedidoTeste.add(new Agua(3));
+        PedidoTeste.add(new Agua(2));
+        PedidoTeste.add(new Agua(1));
+        PedidoTeste.add(new BebidaRefrigeranteLata(1));
+        PedidoTeste.add(new BebidaRefrigeranteRefil(5));
+        PedidoTeste.add(new ChaGelado(1));
+        PedidoTeste.add(new Suco(3));
 
         Pedido PedidoComTudo = new Pedido(1, "ian", PedidoTeste);
 
-        caixaTeste.pedidos.add(PedidoComTudo);
+        caixaTeste.getPedidos().add(PedidoComTudo);
         caixaTeste.exibePedidosTeste();
 
         System.out.print("\nTeste finalizado\nDigite qualquer coisa para prosseguir\n");
@@ -992,7 +1059,7 @@ public class Main {
 
         Pedido PedidoComNada = new Pedido(1, "ian", PedidoTeste);
 
-        caixaTeste.pedidos.add(PedidoComNada);
+        caixaTeste.getPedidos().add(PedidoComNada);
         caixaTeste.exibePedidosTeste();
         
         System.out.print("\nTeste finalizado\nDigite qualquer coisa para prosseguir\n");
@@ -1089,7 +1156,7 @@ public class Main {
             if (opc == 1) {
                 while (true) {
                     System.out.print("\n=========================\nQual ingrediente deseja remover?\n[1] Hamburguer\n" +
-                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n [7] Carne\n[8] Pronto\n[9] Cancelar pedido\n=========================\n");
+                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Carne\n[8] Pronto\n[9] Cancelar pedido\n=========================\n");
 
                     while (true) {
                         try {
@@ -1154,8 +1221,23 @@ public class Main {
 
 
                 while (true) {
-                    System.out.print("\n=========================\nQual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
-                            "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Frango\n[8] Salsicha\n[9] Hamburguer 2\n[10] Pronto\n[11] Cancelar pedido\n=========================\n");
+                    System.out.print("""
+                            
+                            =========================
+                            Qual ingrediente deseja remover?
+                            [1] Hamburguer 1
+                            [2] Pão
+                            [3] Salada
+                            [4] Molho
+                            [5] Ovo
+                            [6] Queijo
+                            [7] Frango
+                            [8] Salsicha
+                            [9] Hamburguer 2
+                            [10] Pronto
+                            [11] Cancelar pedido
+                            =========================
+                            """);
 
                     while (true) {
                         try {
@@ -1260,7 +1342,7 @@ public class Main {
 
         HamburguerTriplo hamburguerTriplo = new HamburguerTriplo();
 
-        System.out.print("\n=========================\nDeseja remover algum ingrediente?\n[1] Sim\n[2] Não\n[3]Cancelar pedido\n=========================\n");
+        System.out.print("\n=========================\nDeseja remover algum ingrediente?\n[1] Sim\n[2] Não\n[3] Cancelar pedido\n=========================\n");
 
         while (true) {
             try {
@@ -1283,9 +1365,26 @@ public class Main {
         if (opc == 1) {
 
             while (true) {
-                System.out.print("\n=========================\nQual ingrediente deseja remover?\n[1] Hamburguer 1\n" +
-                        "[2] Pão\n[3] Salada\n[4] Molho\n[5] Ovo\n[6] Queijo\n[7] Carne\n[8] Frango\n" +
-                        "[9] Salsicha\n[10] Hamburguer 2\n [11] Hamburguer 3\n[12] Salada 2\n [13] Pronto\n[14] Cancelar pedido\n=========================\n");
+                System.out.print("""
+                        
+                        =========================
+                        Qual ingrediente deseja remover?
+                        [1] Hamburguer 1
+                        [2] Pão
+                        [3] Salada
+                        [4] Molho
+                        [5] Ovo
+                        [6] Queijo
+                        [7] Carne
+                        [8] Frango
+                        [9] Salsicha
+                        [10] Hamburguer 2
+                        [11] Hamburguer 3
+                        [12] Salada 2
+                        [13] Pronto
+                        [14] Cancelar pedido
+                        =========================
+                        """);
 
                 while (true) {
                     try {
@@ -1348,8 +1447,19 @@ public class Main {
 
 
             while (true) {
-                System.out.print("\n=========================\nQual ingrediente deseja remover?\n[1] Pão\n[2]Frango Empanado\n" +
-                        "[3] Salada\n[4] Maionese\n[5] Queijo\n[6] Pronto\n[7] Cancelar pedido\n=========================\n");
+                System.out.print("""
+                        
+                        =========================
+                        Qual ingrediente deseja remover?
+                        [1] Pão
+                        [2] Frango Empanado
+                        [3] Salada
+                        [4] Maionese
+                        [5] Queijo
+                        [6] Pronto
+                        [7] Cancelar pedido
+                        =========================
+                        """);
 
                 while (true) {
                     try {
@@ -1540,7 +1650,7 @@ public class Main {
             while (true) {
 
                 System.out.print("\n=========================\nQual ingrediente deseja remover?\n");
-                System.out.print("[1] Pão\n[2] Hamburguer\n[3] Queijo Mussarela\n[4] Tomate\n[5] Alface\n[6] Maionese\n [7] Pronto\n[8] Cancelar pedido\n=========================\n");
+                System.out.print("[1] Pão\n[2] Hamburguer\n[3] Queijo Mussarela\n[4] Tomate\n[5] Alface\n[6] Maionese\n[7] Pronto\n[8] Cancelar pedido\n=========================\n");
 
                 while (true) {
                     try {
@@ -1663,8 +1773,20 @@ public class Main {
         }
         if (opc == 1) {
             while (true) {
-                System.out.print("\n=========================\nQual ingrediente deseja remover?\n[1] Pão\n[2] Hamburguer\n" +
-                        "[3] Salada Americana\n[4] Cebola Picada\n[5] Molho Defumado\n[6] Maionese\n[7] Pronto\n[8] Cancelar pedido\n=========================\n");
+                System.out.print("""
+                        
+                        =========================
+                        Qual ingrediente deseja remover?
+                        [1] Pão
+                        [2] Hamburguer
+                        [3] Salada Americana
+                        [4] Cebola Picada
+                        [5] Molho Defumado
+                        [6] Maionese
+                        [7] Pronto
+                        [8] Cancelar pedido
+                        =========================
+                        """);
 
                 while (true) {
                     try {
@@ -1843,7 +1965,7 @@ public class Main {
         if(opc == 4){
             return 1;
         }
-        Sorvete sorvete = new Sorvete(SorveteSabor.values()[opc - 1]);
+        Sorvete sorvete = new Sorvete(opc);
         produtos.add(sorvete);
         System.out.print("\n=========================\nSorvete adicionado ao carrinho!\n=========================\n");
         return 0;
@@ -1886,7 +2008,7 @@ public class Main {
                 if(opc == 6){
                     return 1;
                 }
-                BebidaRefrigeranteRefil refil = new BebidaRefrigeranteRefil(RefriSabores.values()[opc-1]);
+                BebidaRefrigeranteRefil refil = new BebidaRefrigeranteRefil(opc);
 
                 produtos.add(refil);
 
@@ -1913,7 +2035,7 @@ public class Main {
                 if(opc == 6){
                     return 1;
                 }
-                BebidaRefrigeranteLata lata = new BebidaRefrigeranteLata(RefriSabores.values()[opc-1]);
+                BebidaRefrigeranteLata lata = new BebidaRefrigeranteLata(opc);
 
                 produtos.add(lata);
 
@@ -1948,7 +2070,7 @@ public class Main {
             return 1;
         }
 
-        Suco suco = new Suco(Sucos.values()[opc-1]);
+        Suco suco = new Suco(opc);
         produtos.add(suco);
         System.out.print("\n=========================\nSuco adicionado ao carrinho!\n=========================\n");
         return 0;
@@ -1958,8 +2080,17 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         int opc;
 
-        System.out.print("\n=========================\n[1] Pessego\n[2] Limão com abacaxi e hortelã\n[3] Maçã\n[4] Maracujá com maçã\n" +
-                "[5] Amora com hortelã\n[6] Cancelar pedido\n=========================\n");
+        System.out.print("""
+                
+                =========================
+                [1] Pessego
+                [2] Limão com abacaxi e hortelã
+                [3] Maçã
+                [4] Maracujá com maçã
+                [5] Amora com hortelã
+                [6] Cancelar pedido
+                =========================
+                """);
 
         while (true) {
             try {
@@ -1977,7 +2108,7 @@ public class Main {
             }
         }
 
-        ChaGelado cha = new ChaGelado(ChaSabor.values()[opc -1]);
+        ChaGelado cha = new ChaGelado(opc);
         produtos.add(cha);
         System.out.print("\n=========================\nChá Gelado adicionado ao carrinho!\n=========================\n");
         return 0;
@@ -2007,7 +2138,7 @@ public class Main {
         if(opc == 4){
             return 1;
         }
-        Agua agua = new Agua(Aguas.values()[opc-1], opc);
+        Agua agua = new Agua(opc);
         produtos.add(agua);
         System.out.print("\n=========================\nÁgua adicionada ao carrinho!\n=========================\n");
         return 0;
@@ -2042,11 +2173,10 @@ public class Main {
                 if (montaHambSimp(produtos, opc) == 1){
                     return 1;
                 } else {
-                    System.out.print("\n=========================\nHamburguer simples adicionado ao carrinho!\n=========================\n");
                     return 0;
                 }
             case 2://hamburguer duplo
-                System.out.print("\n=========================\n[1] Frango\n[2] Carne\n[3]Cancelar pedido\n=========================\n");
+                System.out.print("\n=========================\n[1] Frango\n[2] Carne\n[3] Cancelar pedido\n=========================\n");
 
                 while (true) {
                     try {
@@ -2069,14 +2199,12 @@ public class Main {
                 if(montaHambDupl(produtos, opc) == 1){
                     return 1;
                 } else {
-                    System.out.print("\n=========================\nHamburguer duplo adicionado ao carrinho!\n=========================\n");
                     return 0;
                 }
             case 3: //hamburguer Triplo
                 if(montaHambTrip(produtos) == 1){
                     return 1;
                 } else {
-                    System.out.print("\n=========================\nHamburguer triplo adicionado ao carrinho!\n=========================\n");
                     return 0;
                 }
         }
@@ -2138,8 +2266,10 @@ public class Main {
         switch (i) {
             case 1://batata
                 montaBatata(produtos);
+                break;
             case 2://filé
                 montaFile(produtos);
+                break;
         }
     }
 

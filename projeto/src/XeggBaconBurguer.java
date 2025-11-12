@@ -1,34 +1,52 @@
 import java.util.ArrayList;
 
 public class XeggBaconBurguer implements Produtos{
-    protected ArrayList <IngredientesXBB> ingredientes;
-    protected static double preco;
+    private ArrayList <IngredientesXBB> ingredientes;
+    private static double preco;
+    private String nome;
 
     XeggBaconBurguer(){
         ingredientes = new ArrayList<>();
         for(int i = 0; i < IngredientesXBB.values().length; i++){
-            ingredientes.add(IngredientesXBB.values()[i]);
+            getIngredientesXBB().add(IngredientesXBB.values()[i]);
         }
-        preco = 18.0;
+        setPreco(18.50);
+        setNome();
     }
-    public void remove( IngredientesXBB a ){
-        ingredientes.remove(a);
+    public void setPreco(double valor){
+        XeggBaconBurguer.preco = valor;
+    }
+
+    public void setNome() {
+        this.nome = "X egg bacon burguer\n";
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void remove(IngredientesXBB a ){
+        getIngredientesXBB().remove(a);
+    }
+    public ArrayList<IngredientesXBB> getIngredientesXBB() {
+        return ingredientes;
     }
     @Override
     public void imprime() {
-        for(int i = 0; i < ingredientes.size(); i++){
-            System.out.print(ingredientes.get(i) + "\n");
+        exibirNome();
+        for(int i = 0; i < getIngredientesXBB().size(); i++){
+            System.out.print(getIngredientesXBB().get(i) + "\n");
         }
-        System.out.print("Preço: "+preco+"\n");
+        System.out.print("Preço: "+getPreco()+"\n");
     }
 
     @Override
     public void exibirNome() {
-        System.out.print("X egg bacon burguer\n");
+        System.out.print(getNome());
     }
 
     @Override
-    public double getValor() {
+    public double getPreco() {
         return preco;
     }
 }

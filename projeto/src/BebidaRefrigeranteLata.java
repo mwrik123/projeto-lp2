@@ -1,26 +1,47 @@
 public class BebidaRefrigeranteLata implements Produtos {
-    protected static double preco;
+    private static double preco;
+    private RefriSabores sabor;
+    private String nome;
 
-    protected RefriSabores sabor;
+    BebidaRefrigeranteLata(int i) {
+        setSabor(i);
+        setPreco(5.00);
+        setNome();
+    }
 
-    BebidaRefrigeranteLata(RefriSabores saborRefri) {
-        sabor = saborRefri;
-        preco = 9.00;
+    public void setSabor(int i) {
+        this.sabor = RefriSabores.values()[i-1];
+    }
+
+    public void setNome() {
+        this.nome = "Refrigerante lata "+ getSabor()+"\n";
+    }
+
+    public static void setPreco(double preco) {
+        BebidaRefrigeranteLata.preco = preco;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public RefriSabores getSabor() {
+        return sabor;
     }
 
     @Override
     public void imprime() {
-        System.out.print(sabor);
-        System.out.print("Preço: " + preco + "\n");
+        exibirNome();
+        System.out.print("Preço: " + getPreco() + "\n");
     }
 
     @Override
     public void exibirNome() {
-        System.out.print("Refrigerante lata\nTipo:"+ sabor+"\n");
+        System.out.print(getNome());
     }
 
     @Override
-    public double getValor() {
+    public double getPreco() {
         return preco;
     }
 }

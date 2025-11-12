@@ -1,58 +1,73 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Hamburguer implements Produtos{
 
-    protected ArrayList <Ingredientes> ingredientes;
-    protected static double preco;
+    private ArrayList <Ingredientes> ingredientes;
+    private static double preco;
+    private String nome;
 
-    Hamburguer(int opc){
+    Hamburguer(int i){
         ingredientes = new ArrayList<>();
-        for(int i = 0; i < 6; i++){
-            ingredientes.add(Ingredientes.values()[i]);
-        }
-        if(opc == 1){
-            ingredientes.add(Ingredientes.FRANGO);
-        }
-        if(opc == 2){
-            ingredientes.add(Ingredientes.CARNE);
-        }
-        preco = 15.0;
+        setIngredientesFouC(i);
+        setPreco(21.50);
+        setNome("Hamburguer Simples\n");
     }
     Hamburguer(){
         ingredientes = new ArrayList<>();
-        for(int i = 0; i < Ingredientes.values().length; i++){
-            ingredientes.add(Ingredientes.values()[i]);
+    }
+
+    public static void setPreco(double preco) {
+        Hamburguer.preco = preco;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setIngredientesFouC(int i){
+        for(int j = 0; j < 6; j++){
+            ingredientes.add(Ingredientes.values()[j]);
+        }
+        if(i == 1){
+            ingredientes.add(Ingredientes.FRANGO);
+        } else if (i == 2){
+            ingredientes.add(Ingredientes.CARNE);
+        } else {
+            System.out.print("erro no set de ingredientes do hamburguer");
         }
     }
 
-    void remove(Ingredientes ingrediente){
+    public String getNome() {
+        return nome;
+    }
+
+    public void remove(Ingredientes ingrediente){
         ingredientes.remove(ingrediente);
+    }
+    public void addIngrediente(Ingredientes ingredientes){
+        this.ingredientes.add(ingredientes);
+    }
+    public void setIngredientesTriplo(){
+        Collections.addAll(ingredientes, Ingredientes.values());
     }
     @Override
     public void imprime() {
+        exibirNome();
         for(Ingredientes ingredientes1 : ingredientes){
             System.out.print(ingredientes1+"\n");
         }
-        System.out.print("Preço: "+preco+"\n");
+        System.out.print("Preço: "+getPreco()+"\n");
     }
 
     @Override
     public void exibirNome() {
-        System.out.print("Hamburguer Simples\n");
+        System.out.print(getNome());
     }
 
     @Override
-    public double getValor() {
+    public double getPreco() {
         return preco;
-    }
-
-    void novoPreco (int i){
-        if(i == 2){
-            Hamburguer.preco = 20.0;
-        }
-        if(i == 3){
-            Hamburguer.preco = 25.0;
-        }
     }
 
 }
