@@ -1196,7 +1196,7 @@ public class Main {
         if (i == 1) {//hamburguer duplo de frango
             HamburguerDuplo hamburguerDuplo = new HamburguerDuplo(i);
 
-            System.out.print("\n=========================\nDeseja remover algum ingrediente?z\n[1] Sim\n[2] Não\n[3] Cancelar pedido\n=========================\n");
+            System.out.print("\n=========================\nDeseja remover algum ingrediente?\n[1] Sim\n[2] Não\n[3] Cancelar pedido\n=========================\n");
 
             while (true) {
                 try {
@@ -2325,6 +2325,7 @@ public class Main {
         return 1;
     }
 }
+
 
 
 
