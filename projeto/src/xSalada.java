@@ -45,7 +45,7 @@ public class xSalada implements Produtos {
 
     @Override
     public void exibirNome() {
-        System.out.print(getNome());
+        System.out.print(getNome()+"\n");
     }
 
     @Override
